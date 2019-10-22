@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="等级保护,">
+
+
+
+
+
+  <link rel="alternate" href="/public/atom.xml" title="WarCup Blogs" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/uploads/favicon.png?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="物理和环境安全目的主要是使存放计算机、网络设备的机房及信息系统的设备和存放数据的介质等免受物理环境、自然灾害，以及人为的误操作和恶意操作等各种威胁所产生的风险。物理和环境安全是防护信息系统的最底层，缺乏物理和环境安全，其他任何安全措施都将变得毫无意义，因此物理和环境安全是信息安全建设的重要内容。 物理和环境安全是指为了保证信息系统安全可靠地运行，确保信息系统在对信息进行采集、处理、传输、存储的过程">
+<meta name="keywords" content="等级保护">
+<meta property="og:type" content="article">
+<meta property="og:title" content="物理和环境安全">
+<meta property="og:url" content="https://warcup.cn/blogs/2019/10/08/物理和环境安全/index.html">
+<meta property="og:site_name" content="WarCup Blogs">
+<meta property="og:description" content="物理和环境安全目的主要是使存放计算机、网络设备的机房及信息系统的设备和存放数据的介质等免受物理环境、自然灾害，以及人为的误操作和恶意操作等各种威胁所产生的风险。物理和环境安全是防护信息系统的最底层，缺乏物理和环境安全，其他任何安全措施都将变得毫无意义，因此物理和环境安全是信息安全建设的重要内容。 物理和环境安全是指为了保证信息系统安全可靠地运行，确保信息系统在对信息进行采集、处理、传输、存储的过程">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-10-08T07:08:16.903Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="物理和环境安全">
+<meta name="twitter:description" content="物理和环境安全目的主要是使存放计算机、网络设备的机房及信息系统的设备和存放数据的介质等免受物理环境、自然灾害，以及人为的误操作和恶意操作等各种威胁所产生的风险。物理和环境安全是防护信息系统的最底层，缺乏物理和环境安全，其他任何安全措施都将变得毫无意义，因此物理和环境安全是信息安全建设的重要内容。 物理和环境安全是指为了保证信息系统安全可靠地运行，确保信息系统在对信息进行采集、处理、传输、存储的过程">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://warcup.cn/blogs/2019/10/08/物理和环境安全/">
+
+
+
+
+
+  <title>物理和环境安全 | WarCup Blogs</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--  -->
+  <link href="//fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet" type="text/css">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+	<a href="https://github.com/warcup" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">WarCup Blogs</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">What is insistence ? That is day after day, you tell youself to go on for another day.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photo">
+          <a href="/photo" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-image"></i> <br>
+            
+            相册
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://warcup.cn/blogs/2019/10/08/物理和环境安全/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="warcup">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar_warcup.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WarCup Blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">物理和环境安全</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-08T09:24:51+08:00">
+                2019-10-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/知识整理/" itemprop="url" rel="index">
+                    <span itemprop="name">知识整理</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  5.4k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  18 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>物理和环境安全目的主要是使存放计算机、网络设备的机房及信息系统的设备和存放数据的介质等免受物理环境、自然灾害，以及人为的误操作和恶意操作等各种威胁所产生的风险。物理和环境安全是防护信息系统的最底层，缺乏物理和环境安全，其他任何安全措施都将变得毫无意义，因此物理和环境安全是信息安全建设的重要内容。</p>
+<p>物理和环境安全是指为了保证信息系统安全可靠地运行，确保信息系统在对信息进行采集、处理、传输、存储的过程中，不至于受到人为或自然因素的危害，而使信息丢失、 油露或被破坏，对计算机设备、设施〈包括机房建筑、供电、空调等） 、环境人员、系统等采取适当的安全措施。物理和环境安全的直接保护对象是硬设备，硬设备的安全是信息系统安全的基础。</p>
+<h1 id="物理和环境安全要素"><a href="#物理和环境安全要素" class="headerlink" title="物理和环境安全要素"></a>物理和环境安全要素</h1><h2 id="物理资产分类"><a href="#物理资产分类" class="headerlink" title="物理资产分类"></a>物理资产分类</h2><p>物理资产指信息系统中的各种硬件、软件和物理设施，其通常的分类方式有:</p>
+<p>1）计算机设备: 各种服务器、桌面计算机、笔记本电脑等。</p>
+<p>2）通信设备: 路由器、交换机、防火墙等。</p>
+<p>3）技术设备: 电源、不间断电源 〈UPS） 、空调等。</p>
+<p>4）存储介质: 光盘、U 盘、磁带等。</p>
+<p>5）家具及固定装置: 机柜、机架等。</p>
+<p>6）其他。</p>
+<h2 id="物理和环境安全威胁"><a href="#物理和环境安全威胁" class="headerlink" title="物理和环境安全威胁"></a>物理和环境安全威胁</h2><p>信息系统物理和环境安全面临多种威胁，既可能面临自然、环境和技术故障等非人为因素的威胁，也可能面临人员失误和恶意攻击等人为因素的威胁，这些威胁通过破坏信息系统的保密性〈如电磁泄漏类威胁） 、完整性〈如各种自然灾难类威胁） 、可用性〈如技术故障类威胁）进而威胁信息的安全。造成威胁的因素可分为人为因素和环境因素。根据威胁的动机，人为因素又可分为恶意和非恶意两种；环境因素包括自然界不可抗的因素和其他物理因素。</p>
+<table>
+<thead>
+<tr>
+<th>种类</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>自然灾害</td>
+<td>鼠蚁虫害洪灾\地震等</td>
+</tr>
+<tr>
+<td>电、磁环境影响</td>
+<td>断电、电压波动静电、电磁干扰等</td>
+</tr>
+<tr>
+<td>物理环境影响</td>
+<td>灰尘潮湿、温度等</td>
+</tr>
+<tr>
+<td>软硬件故障</td>
+<td>由于设备硬件故障、通信链路中断、系统本身或软件缺陷对信息系统安全造成的影响</td>
+</tr>
+<tr>
+<td>物理攻击</td>
+<td>物理接触物理破坏、盗窃</td>
+</tr>
+<tr>
+<td>无作为或操作失误</td>
+<td>由于应该执行而没有执行相应的操作，或无意地执行了错误操作，对信息系统造成的影响</td>
+</tr>
+<tr>
+<td>管理不到位</td>
+<td>物理安全管理无法落实或不到位，造成物理安全管理不规范，或者管理混乱，从而破坏环境信息系统，使其正常有序地运行</td>
+</tr>
+<tr>
+<td>恶意代码和病毒</td>
+<td>改变物理设备的配置，甚至破坏设备硬件电路，致使物理设备失效或损坏</td>
+</tr>
+<tr>
+<td>网络攻击</td>
+<td>利用工具和技术，如拒绝服务等手段，非法占用系统资源，降低信息系统可用性</td>
+</tr>
+<tr>
+<td>越权或滥用</td>
+<td>通过采用一些措施，超越自己的权限访问了本来无权访问的资源，或者滥用自己的职权，   做出破坏信息系统的行为，如非法设备接和人、设备非法外联</td>
+</tr>
+<tr>
+<td>设计、配置缺陷</td>
+<td>设计阶段出现明显的系统可用性漏洞，系统未能正确有效配置、系统扩容和调整引起的错误</td>
+</tr>
+</tbody></table>
+<h2 id="物理和环境安全脆弱性"><a href="#物理和环境安全脆弱性" class="headerlink" title="物理和环境安全脆弱性"></a>物理和环境安全脆弱性</h2><p>脆弱性是信息系统本身存在的，威胁总是要利用信息系统的脆弱性造成危害。物理设备安全的脆弱性可以从以下方面进行识别：防电磁信息泄露、抗电磁干扰、电源保护及设备振动、碰撞、冲击适应性等；物理环境安全的脆弱性可以从以下方面进行识别，机房场地选择、机房屏蔽、防火、防水、防雷、防鼠、防盗防毁、供配电系统、空调系统、综合布线、区域防护等；系统自身物理安全的脆弱性可以从以下方面进行识别：灾难备份与恢复、边界保护、设备管理、资源利用等。</p>
+<h1 id="物理和环境安全的要求及内容"><a href="#物理和环境安全的要求及内容" class="headerlink" title="物理和环境安全的要求及内容"></a>物理和环境安全的要求及内容</h1><p>物理和环境安全保护的要求是复杂的，其基本要求包括: </p>
+<p>1）物理位置的安全，包括机房和办公场地的位置。</p>
+<p>2）物理访问的控制。 </p>
+<p>3）防盗窃和防破坏。 </p>
+<p>4）防雷击。 </p>
+<p>5）防火。 </p>
+<p>6）防水、防潮。 </p>
+<p>7）防静电。 </p>
+<p>8）温湿度控制。 </p>
+<p>9）电力供应。 </p>
+<p>10） 电磁防护。</p>
+<h2 id="物理位置选择"><a href="#物理位置选择" class="headerlink" title="物理位置选择"></a>物理位置选择</h2><p>为确保数据的安全，机房的选址是至关重要的，即必须在交通、通信便捷的地区，而且具有防震、防风、防雨等能力的建筑内。</p>
+<p>在多层建筑或高层建筑物内的机房，宜设于第二至五层，不宜设在一层或顶层。</p>
+<p>计算机系统受粉尘、有害气体、震动冲击、电磁场干扰等因素的影响会导致运算差错、误动作和机械部件磨损，缩短计算机使用寿命。因此机房位置应尽可能选择远离产生粉尘、有害气体、强震源、强噪声源等场所，避开强电磁场干扰。对强电磁场干扰这一因素 ，必要时需做实地测量来确定。</p>
+<h2 id="物理访问的控制"><a href="#物理访问的控制" class="headerlink" title="物理访问的控制"></a>物理访问的控制</h2><p>单位需要建立机房安全管理制度，对进出机房的人员进行控制、鉴别和记录，同时对进入机房的来访人员采取申请审批，并在进入机房后进行监控和限制其活动范围。对机房的物理访问控制包括以下八个方面：<br>1）出人机房区域的所有人员须佩戴机房出人证，无证者不能进入。</p>
+<p>2）机房工作人员及需要长期进入机房区域工作的人员，在得到机房相关部门授权后，使用固定期限出入证出入。</p>
+<p>3）外来人员（包括厂家工程师、参观者及其他外访人员）进入机房区域须事先预约登记，并由相关人员陪同，在批准有效期内持临时出入证出入。</p>
+<p>4）除授权人员外，任何进入机房区域的人员须履行登记手续，按规定填写《机房出入登记表》。</p>
+<p>5）只有与卡号登记相符的持卡人员才可以使用机房门禁卡，各持卡人未经机房管理人员同意，不得将门禁卡转借他人。</p>
+<p>6）人员进入机房，禁止携带可能影响和威胁机房正常运行的物品，如食品和饮料，香烟，易燃易爆物品 ，电磁设备，放射性物品，以及任何照相机和录音器材等。</p>
+<p>7）计算机等设备的出入须遵守机房移入移出设备管理规定，履行设备移人、移出的申请和登记流程。</p>
+<p>8）进入机房区域的人员须遵守关于机房的各项规章制度。</p>
+<table>
+<thead>
+<tr>
+<th>姓名</th>
+<th>单位</th>
+<th>进入机房事由</th>
+<th>进入机房授权人员签字</th>
+<th>进入（日期/时间）</th>
+<th>离开（日期/时间）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="防盗窃和防止破坏"><a href="#防盗窃和防止破坏" class="headerlink" title="防盗窃和防止破坏"></a>防盗窃和防止破坏</h2><p>应将主要设备放置在机房内，对机房的所有资产进行介质分类标识，形成档案或介质库进行保存。对于机房的通信线缆，应将其铺设在地下或管道中进行隐藏以兔遭到破坏。</p>
+<p>建立机房设施与环境监控系统，对机房空调、消防、不间断电源（UPS）、供配电、门禁系统等重要设施实行全面监控。</p>
+<p>对机房环境一般实行7x24小时集中综合监控。运行监测岗位的人员实时监控电源系统、空调系统和机房环境，定期巡检、维护场地设施，填写巡检日志，记录、处理和报告监控系统终端各种声、光告警模块发出的报警信息。</p>
+<h2 id="防雷击"><a href="#防雷击" class="headerlink" title="防雷击"></a>防雷击</h2><p>电子设备富含大量的CMOS半导体集成模块，普遍存在着绝缘强度低、过电压耐受能力差等致命弱点，一旦遭受雷击过压的冲击，会造成这些电子系统的运行中断，设备永久性损坏；重要的是这些系统所承负的那些须实时运行的后续工作的中断瘫痪所造成的不可估量的直接与间接的巨大经济损失和影响。对雷电电磁脉冲（LEMP）的防护，不但是必要的，而且是必须实施的。随着电子设备的广泛应用，雷击设备事故概率的增加及人们防雷意识的增强， 日趋显示了电涌保护器（访雷器，简称 SPD）在保障电子设备的运行安全性方面起到的作用和地位。</p>
+<p>防雷工程分为直击雷和雷电感应两大部分。直击雷防御系统的主要作用，是捕捉雷电闪击点，保护建筑物及室外部分设备免受雷电的直接打击。直击雷防御系统的主要组成部分为接内器（如雷针、带、网）、引下线、接地装置。雷电感应防御系统的主要作用，是降低雷击时的冲击电位差和雷电电磁感应强度，保护电子设备免受雷击过电压和 雷电电磁脉冲的危害。雷电感应防御系统的主要组成部分为电磁屏蔽、电涌保护器、等电位连接。在防雷工程设计时应系统地、因地制宜地将直击雷防御和雷电感应防御有机地结合起来，才能保证整体防雷工程的有效性，因此整体防雷工程应从以下几个要素着手。</p>
+<p>1）捕捉雷电闪击。在大楼顶部安装接闪器，让雷电按指定的途径泄放入地，避免微波接收天线等直接接受雷电流而受损。</p>
+<p>2）雷电流的安全输送。利用引下线引导强大的雷电流安全入地。</p>
+<p>3）雷电能量的对地安全释放。利用良好的接地网系统尽快地泄放雷电能量。降低雷电流的落地电位差，尽可能降低地电位反击能量。</p>
+<p>4）雷电电磁波的屏蔽。利用建筑物的钢筋混凝土墙体、专用屏蔽罩及各种设备自身的金属屏蔽层，衰减雷电电磁脉冲产生的强大磁场对设备中的电子芯片的电磁危害。</p>
+<p>5）防止雷电波通过电力线缆、通信线缆、天馈线缆及其他金属线缆对设备造成的过电压损害。利用相应的电涌保护器，在线路的入口处进行雷电能量拦截，使到达设备的雷电过电压在设备可承受的范围之内。</p>
+<p>6）防止不同地网及相邻金属导体之间产生电位差。采用共地、等电位连接、地网均压等措施，防止雷击电位差对设备的危害。</p>
+<h2 id="防火"><a href="#防火" class="headerlink" title="防火"></a>防火</h2><p>必须对机房设计好消防系统，防患于未然。</p>
+<h3 id="火的种类"><a href="#火的种类" class="headerlink" title="火的种类"></a>火的种类</h3><p>火分为以下几类；</p>
+<p>A 类一一固体有机物质燃烧的火；</p>
+<p>B 类一一液体或可融化固体燃烧的火； </p>
+<p>C 类一一可燃气体燃烧的火；</p>
+<p>D 类一一轻金属燃烧的火。</p>
+<h3 id="灭火原理及介质"><a href="#灭火原理及介质" class="headerlink" title="灭火原理及介质"></a>灭火原理及介质</h3><p>常见的灭火器有干粉类的灭火器、二氧化碳灭火器、泡沫型灭火器、水型灭火器等，其灭火原理各不相同，通常包括:</p>
+<p>（1）冷却法：将灭火剂直接喷到燃烧物上，使燃烧物质的温度降低到燃点之下，而停止燃烧。</p>
+<p>（2）隔离法：将火源处及其周围的可燃物撤离或隔开，使燃烧因与可燃物到离而停止。</p>
+<p>（3） 塞息法：阻止空气流人燃烧区或用不燃烧物质冲淡空气，使燃烧物质得不到足够的氧气而熄灭。</p>
+<p>（4）中断化学反应法：灭火剂参与到燃烧反应过程中，使燃烧过程产生的游离基消失，而形成稳定分子或活性的游离基，从而使燃烧的化学反应中断。</p>
+<p>不同类别的火源，其对应的灭火介质有所区别，具体参见表</p>
+<table>
+<thead>
+<tr>
+<th>等级</th>
+<th>类型</th>
+<th>灭火介质</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A</td>
+<td>普通可燃物</td>
+<td>水.苏打酸</td>
+</tr>
+<tr>
+<td>B</td>
+<td>液体</td>
+<td>气体、二氧化碳；苏打酸</td>
+</tr>
+<tr>
+<td>C</td>
+<td>气体</td>
+<td>气体、二氧化碳</td>
+</tr>
+<tr>
+<td>D</td>
+<td>可燃金属</td>
+<td>干粉</td>
+</tr>
+</tbody></table>
+<p>机房灭火系统禁止采用喷水、泡沫及粉末灭火，比较适合用气体灭火系统。机房的消防系统应该是相对独立的系统，一般在大型的机房中都具备集中监控系统，系统可以准确预报火警，并且在无人值守的情况下自动启动消防灭火系统。</p>
+<h3 id="机房防火考虑点"><a href="#机房防火考虑点" class="headerlink" title="机房防火考虑点"></a>机房防火考虑点</h3><p>1）为预防来自机房外部的火灾危险,理想的情况下机房最好与其他建筑分开建设，并在建筑之间留有一定宽度的防火通道。如果机房与其他用途的房间合用一幢建 筑，根据建筑设计防火规范及机房设计规范规定，应单独设防火分区。这样可以有效地防止来自机房外部的火灾危险。在机房选址时应注意机房要远离易燃易爆物存放区域。</p>
+<p>2）机房应为独立的防火分区，机房的外墙应采用非燃烧材料。进出机房区域的门应采用防火门或防火卷帘。穿越防火墙的送、回风管，应设防火阀。以上措施应在机房平面总体设计及相关专业设计中同步进行。</p>
+<p>3）机房建设采用防火材料。机房内部的建筑材料应选用非燃烧材料 （A 级） 或难燃烧材料 （了级） 。</p>
+<p>4）设置火灾报警系统。在机房设置消防信道并放置对计算机影响较小的气体灭火设备，同时建立火灾自动报警系统。对于灭火设备的摆放位置和有效期进行不定期检查，确保灭火设备的可用性。 </p>
+<p>5）设置气体灭火系统。 </p>
+<p>6）合理正确使用用电设备，制定完善的防火制度。</p>
+<h2 id="防水和防潮"><a href="#防水和防潮" class="headerlink" title="防水和防潮"></a>防水和防潮</h2><p>机房的房顶不允许有水管穿过，如果水管在地板穿过，则必须采取相应的保护防范措施。在机房的窗户、屋顶、墙壁设置保护措施以防止雨水的渗透。对于湿度较高的地区或季节应做好防潮处理。</p>
+<p>为防赴空调系统漏水对机房产生的灾难性后果，须在精密空调周边安装防水坝并配备漏水检测系统和排水装置。</p>
+<h2 id="防静电"><a href="#防静电" class="headerlink" title="防静电"></a>防静电</h2><p>在机房安装防静电地板，进入机房的作业人员必须配备防萝电手套。</p>
+<h3 id="静电防护的基本原则"><a href="#静电防护的基本原则" class="headerlink" title="静电防护的基本原则"></a>静电防护的基本原则</h3><p>1）抑制或减少机房内静电荷的产生，严格控制静电源。</p>
+<p>2）安全、可靠、及时地消除机房内产生的静电荷，避免静电荷积累。静电导电材料和静电耗散材料用泄漏法，使静电荷在一定时间内通过一定的路径汇漏到地。</p>
+<p>3）绝缘材料用以离子静电消除器为代表的中和法，使物体上积累的静电荷吸引从空气中来的异性电荷，被中和而消除。</p>
+<p>4）定期〈如一周） 对防静电设施进行维护和检验。</p>
+<h3 id="静电电压"><a href="#静电电压" class="headerlink" title="静电电压"></a>静电电压</h3><p>静电电压绝对值应小于 200V</p>
+<h3 id="地面要求"><a href="#地面要求" class="headerlink" title="地面要求"></a>地面要求</h3><p>1）当采用地板下布线方式时，可铺设防静电活动地板。</p>
+<p>2）当采用架空布线方式时，应采用静电耗散材料作为铺垫材料。</p>
+<h3 id="其他防静电措施"><a href="#其他防静电措施" class="headerlink" title="其他防静电措施"></a>其他防静电措施</h3><p>1）必要时装设离子静电消除器，以消除绝缘材料上的静电和降低机房内的静电电压。</p>
+<p>2）垫套、手套均应为防静电的。</p>
+<h2 id="温、湿度控制"><a href="#温、湿度控制" class="headerlink" title="温、湿度控制"></a>温、湿度控制</h2><p>在机房设置温、湿度自动调节设施，使机房温度、湿度的变化在设备运行所允许的正常范围内，并监控温、湿度自动调节设备的工作状态，在超出允许范围后自动发出警告给工作人员。</p>
+<p>活动地板铺设在计算机机房的地面找平层上，在活动地板与建筑地面之间的空间内可以铺设连接设备的各种管线。活动地板下空间可作为静压送风风库，通过带气流分布风口的活动地板将机房空调冷风送入室内及发热设备机柜内，机房内能自由调节气流分布。</p>
+<p>活动地板下的空间作为静压送风风库，送风温度约为14度 ，将与下层天花产生极大温差，容易在下层天花产生冷凝水。机房、电池室地板下需铺设橡塑保温板，所有接缝应整齐贴紧，达到良好的保温、节能效果，并具有足够的强度来抵御磨损，橡塑保温面层铺设镀锌钢板。</p>
+<h2 id="电力供应"><a href="#电力供应" class="headerlink" title="电力供应"></a>电力供应</h2><p>机房电气工程中的机房供配电系统是机房的生命线，因此要建一个好的机房，首先要将供配电解决好。一般要求主要开关设备应该被设计成适合增容、维护和冗余，并提供双倍的或隔离的冗余配置。设计时应该考虑到开关装置、总线或断路器维护的方便性。瞬时电压浪涌抑制 （TVSS） 应该被安装在电力分配系统的每一级上，并且采用适当的规格，以便能够抑制可能发生的瞬时的能量。</p>
+<p>同时，为保证机房设备正常运转，在机房的供电线路上应配备稳压器和过电压防护设备； 在机房出现断电的情况下为保证设备正常运转，机房还配备了短期的备用电力〈发电机、蓄电池） 来提供超过 1 小时的供电时间，在机房的特殊区域和重要设备要单独提供UPS来供电。</p>
+<p>对于一级负荷机房应该有从不同变电站供给的双路供电，加上柴油发电机，通过应急电源柜切换后供给机房内的 UPS 和精密空调机组，ATS 切换最好在机房配电系统就近设计，切换后以最短距离输送给机房设备。备用发电机系统是至关重要的一个因素。 即便其中有一个故障，也能够直接地向计算机和其他设备提供一个理想质量和容量的电力供应。发电机的设计应能够处理 UPS 系统或计算机设备负荷的谐波电流。备用发电机应该提供备用电源给所有的冷却设备，避免负载设备温度上升及停止运行。如果发电机不支持这些系统，它们所带来的益处就显得很有限。在自动控制发生故障时，发电机应该能够采用手动控制。应该给每一个发电机输出提供瞬时电压浪涌抑制装置。</p>
+<p>配电必须充分考虑到今后的发展余量。如一台服务器，每台高配功率为 1kW，一个机柜若装 6 台就是 6kW，假如预期机房在今后会装到最多 40 个机柜那就是 240kW； UPS 一般可按照设备容量的 1.3 倍计算，就是 312kVA，再加上适当的余量，选用3台 200kVA UPS 冗余供电是一种较为理想的方案。</p>
+<h2 id="电磁防护"><a href="#电磁防护" class="headerlink" title="电磁防护"></a>电磁防护</h2><p>电源线和通信线路应隔离铺设，避免互相干扰从而影响数据中心的正常运作。</p>
+<p>主机房内无线电干扰场强，在频率为 0.15 ~ 1000MHz 时，不应大于 126dB。</p>
+<p>在计算机系统停机条件下，主机地板表面垂直及水平向的振动加速度值每秒不应大于500mm/s 。</p>
+<p>主机房内磁场干扰环境场强不应大于 800A/m。</p>
+<p>主机房内绝缘体的静电电位不应大于 lkV。</p>
+
+      
+	  
+	  
+	  
+		
+  <div class="article_TheEnd">-----本文结束<i class="fa fa-paw"></i>感谢您的阅读-----</div>
+
+	  
+
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="warcup wechat" style="width: 200px; max-width: 100%;">
+    <div>欢迎扫描二维码关注我的公众号~~~</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>喜 欢 这 篇 文 章 吗 ？</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.jpg" alt="warcup WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<ul class="post-copyright">
+  <li class="post-copyright-title">
+    <strong>本文标题：</strong>
+    物理和环境安全
+  </li>
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    warcup
+  </li>
+  <li class="post-copyright-created_at">
+    <strong>发布时间：</strong>
+    2019-10-08
+  </li>
+  <li class="post-copyright-updated_at">
+    <strong>最后更新：</strong>
+    2019-10-08
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://warcup.cn/blogs/2019/10/08/物理和环境安全/" title="物理和环境安全">https://warcup.cn/blogs/2019/10/08/物理和环境安全/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://warcup.cn/blogs/2019/10/08/物理和环境安全/" aria-label="复制成功！"></i></span>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({
+          title: "",
+          text: '复制文章链接成功',
+          icon: "success",
+          showConfirmButton: true
+          });
+	    });
+    });  
+</script>
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/等级保护/" rel="tag"><i class="fa fa-tag"><!--把#换成图形标签<i class="fa fa-tag"></i>--></i>
+ 等级保护</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/09/windows-下木马的常用功能/" rel="next" title="windows 下木马的常用功能">
+                <i class="fa fa-chevron-left"></i> windows 下木马的常用功能
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/08/网络和通信安全/" rel="prev" title="网络和通信安全">
+                网络和通信安全 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/uploads/avatar_warcup.jpg" alt="warcup">
+          <p class="site-author-name" itemprop="name">warcup</p>
+           
+              <p class="site-description motion-element" itemprop="description">一些生活感悟和技术分享。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/public/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/warcup" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhangruochi.com/" target="_blank" title="RuoChiBlogs">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      RuoChiBlogs
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://skysec.top" target="_blank" title="SkyBlogs">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      SkyBlogs
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#物理和环境安全要素"><span class="nav-number">1.</span> <span class="nav-text">物理和环境安全要素</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#物理资产分类"><span class="nav-number">1.1.</span> <span class="nav-text">物理资产分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#物理和环境安全威胁"><span class="nav-number">1.2.</span> <span class="nav-text">物理和环境安全威胁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#物理和环境安全脆弱性"><span class="nav-number">1.3.</span> <span class="nav-text">物理和环境安全脆弱性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#物理和环境安全的要求及内容"><span class="nav-number">2.</span> <span class="nav-text">物理和环境安全的要求及内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#物理位置选择"><span class="nav-number">2.1.</span> <span class="nav-text">物理位置选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#物理访问的控制"><span class="nav-number">2.2.</span> <span class="nav-text">物理访问的控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防盗窃和防止破坏"><span class="nav-number">2.3.</span> <span class="nav-text">防盗窃和防止破坏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防雷击"><span class="nav-number">2.4.</span> <span class="nav-text">防雷击</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防火"><span class="nav-number">2.5.</span> <span class="nav-text">防火</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#火的种类"><span class="nav-number">2.5.1.</span> <span class="nav-text">火的种类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#灭火原理及介质"><span class="nav-number">2.5.2.</span> <span class="nav-text">灭火原理及介质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#机房防火考虑点"><span class="nav-number">2.5.3.</span> <span class="nav-text">机房防火考虑点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防水和防潮"><span class="nav-number">2.6.</span> <span class="nav-text">防水和防潮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防静电"><span class="nav-number">2.7.</span> <span class="nav-text">防静电</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#静电防护的基本原则"><span class="nav-number">2.7.1.</span> <span class="nav-text">静电防护的基本原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静电电压"><span class="nav-number">2.7.2.</span> <span class="nav-text">静电电压</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#地面要求"><span class="nav-number">2.7.3.</span> <span class="nav-text">地面要求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他防静电措施"><span class="nav-number">2.7.4.</span> <span class="nav-text">其他防静电措施</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#温、湿度控制"><span class="nav-number">2.8.</span> <span class="nav-text">温、湿度控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#电力供应"><span class="nav-number">2.9.</span> <span class="nav-text">电力供应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#电磁防护"><span class="nav-number">2.10.</span> <span class="nav-text">电磁防护</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">warcup</span>
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+</body>
+</html>

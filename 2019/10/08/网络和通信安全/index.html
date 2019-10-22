@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="等级保护,">
+
+
+
+
+
+  <link rel="alternate" href="/public/atom.xml" title="WarCup Blogs" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/uploads/favicon.png?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="网络和通信安全是指网络系统的硬件、软件及其系统中的数据受到保护，不因偶然的或者恶意的原因而遭受到破坏、更改、泄露，系统连续可靠正常地运行，网络服务不中断，从而确保网络数据和通信的可用性、完整性和保密性。网络和通信安全保护的对象是网络系统的硬件、软件。对于重要信息系统来说，网络和通信安全保护对信息系统的访问、读写等操作进行保护和控制，数据传输受到保护，避免出现病毒、非法存取、拒绝服务和网络资源非法占">
+<meta name="keywords" content="等级保护">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络和通信安全">
+<meta property="og:url" content="https://warcup.cn/blogs/2019/10/08/网络和通信安全/index.html">
+<meta property="og:site_name" content="WarCup Blogs">
+<meta property="og:description" content="网络和通信安全是指网络系统的硬件、软件及其系统中的数据受到保护，不因偶然的或者恶意的原因而遭受到破坏、更改、泄露，系统连续可靠正常地运行，网络服务不中断，从而确保网络数据和通信的可用性、完整性和保密性。网络和通信安全保护的对象是网络系统的硬件、软件。对于重要信息系统来说，网络和通信安全保护对信息系统的访问、读写等操作进行保护和控制，数据传输受到保护，避免出现病毒、非法存取、拒绝服务和网络资源非法占">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-10-09T02:55:02.838Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="网络和通信安全">
+<meta name="twitter:description" content="网络和通信安全是指网络系统的硬件、软件及其系统中的数据受到保护，不因偶然的或者恶意的原因而遭受到破坏、更改、泄露，系统连续可靠正常地运行，网络服务不中断，从而确保网络数据和通信的可用性、完整性和保密性。网络和通信安全保护的对象是网络系统的硬件、软件。对于重要信息系统来说，网络和通信安全保护对信息系统的访问、读写等操作进行保护和控制，数据传输受到保护，避免出现病毒、非法存取、拒绝服务和网络资源非法占">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://warcup.cn/blogs/2019/10/08/网络和通信安全/">
+
+
+
+
+
+  <title>网络和通信安全 | WarCup Blogs</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--  -->
+  <link href="//fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet" type="text/css">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+	<a href="https://github.com/warcup" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">WarCup Blogs</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">What is insistence ? That is day after day, you tell youself to go on for another day.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photo">
+          <a href="/photo" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-image"></i> <br>
+            
+            相册
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://warcup.cn/blogs/2019/10/08/网络和通信安全/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="warcup">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar_warcup.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WarCup Blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">网络和通信安全</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-08T16:30:36+08:00">
+                2019-10-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  7.5k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  25 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>网络和通信安全是指网络系统的硬件、软件及其系统中的数据受到保护，不因偶然的或者恶意的原因而遭受到破坏、更改、泄露，系统连续可靠正常地运行，网络服务不中断，从而确保网络数据和通信的可用性、完整性和保密性。网络和通信安全保护的对象是网络系统的硬件、软件。对于重要信息系统来说，网络和通信安全保护对信息系统的访问、读写等操作进行保护和控制，数据传输受到保护，避免出现病毒、非法存取、拒绝服务和网络资源非法占用和非法控制等威胁，制止和防御网络黑客的攻击。</p>
+<h1 id="防火墙技术"><a href="#防火墙技术" class="headerlink" title="防火墙技术"></a>防火墙技术</h1><h2 id="防火墙概述"><a href="#防火墙概述" class="headerlink" title="防火墙概述"></a>防火墙概述</h2><p>防火墙这个词来源于建筑词汇，用于限制（潜在的） 火灾在建筑内部的蔓延，后被引申至信息安全领域中访问控制、边界整合类的产品，防火墙是一种访问控制技术，在某个机构的网络和不安全的网络之间设置障碍，阻止对信息资源的非法访问。</p>
+<h2 id="防火墙的作用"><a href="#防火墙的作用" class="headerlink" title="防火墙的作用"></a>防火墙的作用</h2><p>防火墙的作用通常包括以下几个方面。</p>
+<p>1）防火墙是网络安全的屏障</p>
+<p>一个防火墙（作为阻塞点、控制点）能极大地提高内部网络的安全性，并通过过滤不安全的服务而降低风险。同时，防火墙可以保护网络免受基于路由的攻击，</p>
+<p>2）防火墙可以强化网络安全策略</p>
+<p>通过以防火墙为中心的安全方案配置，能将所有安全软件（如口令、加密、身份认证、审计等） 配置在防火墙。与将网络安全问题分散到各个主机上相比，防火墙的集中安全管理更经济。如在网络访问时，一次一密口令系统和其他的身份认证系统完全可以不必分散在各个主机上，而可以集中在防火墙一身上。</p>
+<p>3）对网络存取和访问进行监控审计</p>
+<p>如果所有的访问都经过防火墙，那么，防火墙就能记录下这些访问并做出日志记录，同时也能提供网络使用情况的统计数据。当发生可疑动作时，防火墙能进行适当的报警，并提供网络是否受到监测和攻击的详细信息。</p>
+<p>4）防止内部信息的外泄</p>
+<p>通过利用防火墙对内部网络的划分，可实现内部网重点网段的隔离，从而限制了局部重点或敏感网络安全问题对全局网络造成的影响。</p>
+<h2 id="防火墙的功能"><a href="#防火墙的功能" class="headerlink" title="防火墙的功能"></a>防火墙的功能</h2><p>防火墙作为不同安全域间的阻塞点和控制点，极大地提高了内部网络的安全性，它通过过滤不安全的服务而降低风险。从其发生发展的情况来看，防火墙的功能日益成熟。</p>
+<p>1）路由功能</p>
+<p>外网口、内网口、DMZ 区不在同一网段时，防火墙启用路由模式，此时的防火墙相当于一台路由器在使用。</p>
+<p>地址转换功能</p>
+<p>网络地址转换 （Network Address Translation，NAT） 被广泛应用于各种类型的 Internet 接入方式和网络中。原因很简单，NAT不仅完美地解决了IP地址不足的问题，而且还能够有效地避免来自网络外部的攻击，隐藏并保护网络内部的计算机。</p>
+<p>3）控制访问功能</p>
+<p>防火墙以其阻塞点的身份实现监视和控制，通过服务控制、方向控制和用户控制实现访问控制的功能。</p>
+<p>4）负载均衡功能</p>
+<p>负载均衡是一种廉价有效透明的方法，以扩展现有网络设备和服务器的带宽、增加吞吐量、加强网络数据处理能力、提高网络的灵活性和可用性的技术就是负载均衡（Load Balance）。</p>
+<p>5）VPN 功能</p>
+<p>虚拟专用网（VPN）被定义为通过一个公用网络（通常是Internet）建立一个临时的、安全的连接，是一条穿过混乱的公用网络的安全、稳定的隧道，保证数据的安全传输。</p>
+<p>6）QoS功能</p>
+<p>QoS的英文全称为“Quality of Service”，中文名为“服务质量”。QoS是网络的一种安全机制，是在带宽分配、网络阻塞等问题中常用的一种技术。在正常情况下，如果网络只用于特定的无时间限制的应用系统，并不需要QoS，比如 WEB 应用，或E-Mail设置等。但是对关键应用和多媒体应用就十分必要。当网络过载或拥塞时，QoS能确保重要业务量不受延迟或丢弃，同时保证网络的高效运行。</p>
+<h2 id="防火墙的分类"><a href="#防火墙的分类" class="headerlink" title="防火墙的分类"></a>防火墙的分类</h2><p>根据不同的分类方式，防火墙有不同的类别。</p>
+<p>从防火墙的存在形式来分的话，可以分为软件防火墙和硬件防火墙。</p>
+<p>从防火墙部署的位置来看，可以分为个人防火墙和网络防火墙。</p>
+<p>从架构实现方式来看，硬件防火墙一般是基于三种平台去实现：X86、NP架构、ASIC架构。</p>
+<p>从技术原理上讲，防火墙总体来讲可分为四大类：简单包过滤型、状态检测型、应用代理型、内核检测型。</p>
+<h2 id="防火墙应用场景"><a href="#防火墙应用场景" class="headerlink" title="防火墙应用场景"></a>防火墙应用场景</h2><p>以下列举防火墙的部分应用场景：</p>
+<p>1）在移动办公区部署防火墙实现连接互联网接入同时与内网各个区域实现安全隔离。</p>
+<p>2）在开发测试区出口部署防火墙，进行访问控制。</p>
+<p>3）在外网访问区域，采用双机部署模式，采用双宛余链路互联，提高业 务系统的可用性。</p>
+<p>4）在应用APP + DB区域，提供 APP 与 DB 之间 的互访，并于内网前置机进行通信。</p>
+<p>5）在内外网之间采用双机部署模式，实现双宛余链路互联，实现内外网安全隔离。</p>
+<p>6）在第三方支付系统的出口部署防火墙，实现与其他业务系统的隔离和安全防护。</p>
+<h1 id="网络威胁检测与防护技术"><a href="#网络威胁检测与防护技术" class="headerlink" title="网络威胁检测与防护技术"></a>网络威胁检测与防护技术</h1><h2 id="IDS概念"><a href="#IDS概念" class="headerlink" title="IDS概念"></a>IDS概念</h2><p>入侵是指在非法或者未经授权的情况下，试图存取或处理系统或网络中的信息，或破坏系统或网络的正常运行，致使系统或网络的可用性、机密性和完整性受到破坏的故意行为。入侵检测 ，顾名思义，是对和入侵行为的发觉。入侵检测技术是为保证计算机系统的安全而设计与配置的一种能够及时发现并报告系统中未授权或异常现象的技术，是 一种用于检测计算机网络中违反安全策略行为的技术，是通过数据的采集和分析实现对入侵行为检测的技术。</p>
+<p>进行入侵检测的软件与硬件的组合便是入侵检测系统（简称 IDS）。入侵检测是防火墙的合理补充，帮助系统对付网络攻击，扩展了系统管理员的安全管理能力（包括安全审计、监视、进攻识别和响应），提高了信息安全基础结构的完整性。入侵检测被认为是防火墙之后的第二道安全闸门，在不影响网络性能的情况下能对网络进行监测， 从而提供对内部攻击、外部攻击和误操作的实时保护。</p>
+<h2 id="入侵检测系统的功能和作用"><a href="#入侵检测系统的功能和作用" class="headerlink" title="入侵检测系统的功能和作用"></a>入侵检测系统的功能和作用</h2><p>由于防火墙处于网关的位置，不可能对进出攻击做太多的判断，否则会严重影响网络性能，如果把防火墙比作大门警卫的话，入侵检测系统就是监控摄像机。入侵检测系统通过监听的方式获取网络的和运行状态数据，判断其中是否含有攻击的企图，并通过各种手段向管理员报警，不但可以发现外部的攻击，也可以发现内部的恶意行为。</p>
+<p>当 IDS 发现一个可疑的恶意威胁（事件）后，它会记录该事件并采取适当的行动。 该行动可能是继续登录、发送报警、重定向攻击。如果该威胁是高风险的，IDS 将提醒相关人员。报警可以通过E-Mail、SNMP、短信发送到移动设备或者控制台。IDS 支持深度安全原理，并可用于检测多种威胁事件。</p>
+<p>入侵检测系统的功能很多，比如监测并分析用户和系统的活动；检查系统配置和漏洞； 评估系统关键资源和数据文件的完整性； 识别已知的攻击行为； 统计分析异常行为； 对操作系统进行日志管理，并识别违反安全策略的用户活动； 针对已发现的攻击行为做出适当的反应，如千警、终止进程等。具体来看，入侵检测系统的功能包括但不限于以下内容:</p>
+<p>1）密码破解。 </p>
+<p>2）协议攻击。 </p>
+<p>3）缓冲区溢出。 </p>
+<p>4）模拟尝试。 </p>
+<p>5）安装工具包。 </p>
+<p>6）恶意命令。 </p>
+<p>7）软件漏洞攻击。 </p>
+<p>8）非法数据操作。</p>
+<p>9）未经授权的文件访问。 </p>
+<p>10） 恶意代码，如病毒、木马和蠕虫。 </p>
+<p>11） 拒绝服务攻击。</p>
+<h2 id="入侵检测系统的分类"><a href="#入侵检测系统的分类" class="headerlink" title="入侵检测系统的分类"></a>入侵检测系统的分类</h2><h3 id="根据检测原理进行分类"><a href="#根据检测原理进行分类" class="headerlink" title="根据检测原理进行分类"></a>根据检测原理进行分类</h3><h4 id="异常检测"><a href="#异常检测" class="headerlink" title="异常检测"></a>异常检测</h4><p>异常入侵检测是根据系统或用户的非正常行为或者对于计算机资源的非正常使用而检测出入侵行为的检测技术。在异常检测中，观察到的不是已知的入侵行为，而是系统运行过程中的异常现象。异常检测需要建立一个系统的正常活动状态或者用户正常行为模式的描述模型，操作时将用户当前行为模式或系统的当前状态与该正常模型进行比较，如果当前值超出了预设的阀值，则认为存在着攻击行为。</p>
+<h4 id="误用检测"><a href="#误用检测" class="headerlink" title="误用检测"></a>误用检测</h4><p>误用入侵检测系统根据已知入侵攻击的信息（知识、模式等）来检测系统中的入侵和攻击。误用检测需要对现有的各种攻击手段进行分析，建立能够代表该攻击行为的特征集合，操作时将当前数据进行处理后与这些特征集合进行匹配，如果匹配成功则说明有攻击发生。</p>
+<h4 id="混合检测"><a href="#混合检测" class="headerlink" title="混合检测"></a>混合检测</h4><p>混合检测指在考虑分析系统正常行为的同时，还观察可以的入侵行为，之后再做出检测结构判断，所以检测结果能更全面、准确和可靠。它通常根据系统的正常数据流背景来检测入侵行为，有人称其为“启发式特征检测”。</p>
+<h3 id="根据数据来源进行分类"><a href="#根据数据来源进行分类" class="headerlink" title="根据数据来源进行分类"></a>根据数据来源进行分类</h3><h4 id="基于主机的入侵检测系统"><a href="#基于主机的入侵检测系统" class="headerlink" title="基于主机的入侵检测系统"></a>基于主机的入侵检测系统</h4><p>基于主机的入侵检测系统（Host-based Intrusion Detection System ， HIDS）通过监测主机的审计记录、系统日志、应用日志及其他辅助数据，来查找和发现攻击行为的痕迹。它可以部署在各种计算机主机上部署。</p>
+<h4 id="基于网络的入侵检测系统"><a href="#基于网络的入侵检测系统" class="headerlink" title="基于网络的入侵检测系统"></a>基于网络的入侵检测系统</h4><p>基于网络的入侵检测系统（Network-based Intrusion Detection System ，NIDS）使用网络数据包作为数据源，通常实时监视并分析通过网络的所有数据，从中获取有用的信息，再与已知攻击特征相匹配或与正常网络行为原型相比较来识别攻击事件。</p>
+<h4 id="混合式的入侵检测"><a href="#混合式的入侵检测" class="headerlink" title="混合式的入侵检测"></a>混合式的入侵检测</h4><p>混合式入侵检测系统将基于主机的入侵检测技术与基于网络的入侵检测技术融合在一块，一方面能够对主机上的用户或进程行为进行监测，另一方面能够对网络的整体态势做出反应。在具体实现上，混合式的入侵检测主要分为两种类型，一种是基于多种监测数据源的入侵检测技术，另一种是采用多种不同类型的检测方法的入侵检测技术。</p>
+<h2 id="入侵检测的过程"><a href="#入侵检测的过程" class="headerlink" title="入侵检测的过程"></a>入侵检测的过程</h2><p>总的来说，入侵检测的过程可以分为三个阶段: 信息收集、信息分析及千警与响应。</p>
+<h3 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h3><p>入侵检测的第一步是信息收集，即从入侵检测系统的信息源中收集信息，包括系统、网络、数据及用户活动的状态和行为等。而且，需要在计算机网络系统中的若干不同关键点 （不同网段和不同主机） 收集信息，这除了尽可能扩大检测范围的因素外，还有一个重要的因素就是从一个源来的信息有可能看不出疑点，但从几个源来的信息的不一致性却是可疑行为或入侵的最好标识。</p>
+<h3 id="信息分析"><a href="#信息分析" class="headerlink" title="信息分析"></a>信息分析</h3><p>信息分析是入侵检测过程中的核心环节，没有信息分析功能，入侵检测也就无从谈起。</p>
+<p>入侵检测的信息分析方法有很多，如模式匹配、统计分析、完整性分析等。每种方法都有其各自的优缺点，也都有其各自的应用对象和范围。</p>
+<p>分析是入侵检测的核心功能，它既能简单到像一个已浏览处理日志的人去建立决策表，也能复杂到一个集成了几百万个处理的非参数系统。</p>
+<h3 id="告警与响应"><a href="#告警与响应" class="headerlink" title="告警与响应"></a>告警与响应</h3><p>当一个攻击或事件被检测到以后，入侵检测系统就应该根据攻击或事件的类型或性质，做出相应的告警与响应，即通知管理员系统正在遭受不良的入侵， 或者采取一定的措施阻止入侵行为的继续。</p>
+<h2 id="入侵检测系统的部署与应用"><a href="#入侵检测系统的部署与应用" class="headerlink" title="入侵检测系统的部署与应用"></a>入侵检测系统的部署与应用</h2><p>网络入侵检测系统位于有敏感数据需要保护的网络上，通过实时侦听网络数据流，寻找网络违规模式和未授权的网络访问尝试。当发现网络违规行为和未授权的网络访问时，网络监控系统能够根据系统安全策略做出反应，包括实时报警、事件登录，或执行用户自定义的安全策略等。</p>
+<p>入侵检测系统可以部署在网络中的核心，监视并记录网络中的所有访问行为和操作，有效防止非法操作和恶意攻击。同时，入侵检测系统还可以形象地重现操作的过程，可帮助安全管理员发现网络安全的隐患 。</p>
+<h2 id="入侵防御系统与-WEB-应用防火墙"><a href="#入侵防御系统与-WEB-应用防火墙" class="headerlink" title="入侵防御系统与 WEB 应用防火墙"></a>入侵防御系统与 WEB 应用防火墙</h2><p>IDS技术采用了一种预设置式、特征分析式工作原理，所以检测规则的更新总是落后于攻击手段的更新。为了弥补其不足，入侵防御系统（Intrusion Prevention System ， IPS） 与 WEB 应用防火墙 （WAF） 应运而生。</p>
+<h3 id="入侵防御系统"><a href="#入侵防御系统" class="headerlink" title="入侵防御系统"></a>入侵防御系统</h3><p>入侵防御系统（IPS）是一部能够监视网络或网络设备的网络数据传输行为的计算机网络安全设备，通过串联而非旁路部署，能够实时地中断、调整或隔离一些不正常或是具有伤害性的网络数据传输行为。</p>
+<p>对于部署在数据转发路径上的 IPS，可以根据预先设定的安全策略，对流经的每个报文进行深度检测 （协议分析跟踪、特征匹配、流量统计分析、事件关联分析等），如果一旦发现隐藏于其中的网络攻击，可以根据该攻击的威胁级别立即采取抵御措施，这些措施包括 （按照处理力度）：向管理中心告警、丢弃该报文、切断此次应用会话、切断此次 TCP 连接。</p>
+<p>IPS 内部的技术特征包括：</p>
+<p>（1）代入式运行    只有以嵌入模式运行的 IPS 设备才能够实现实时的安全防护，实时阻拦所有可疑的数据包，并对该数据流的剩余部分进行拦截。</p>
+<p>（2）深入分析和控制    IPS必须具有深入分析能力，以确定哪些恶意流量已经被拦截，根据攻击类型、策略等来确定哪些流量应该被拦截。</p>
+<p>（3）入侵特征库    高质量的入侵特征库是 IPS 高效运行的必要条件，IPS 还应该定期升级入侵特征库，并快速应用到所有传感器。</p>
+<p>（4）高效处理能力    IPS必须具有高效处理数据包的能力，对整个网络性能的影响保持在最低水平。</p>
+<h3 id="WEB应用防火墙"><a href="#WEB应用防火墙" class="headerlink" title="WEB应用防火墙"></a>WEB应用防火墙</h3><p>WEB 应用防火墙（WAF）是通过执行一系列针对HTTP/HTTPS的安全策略来专门为WEB应用提供保护的一种技术和产品。</p>
+<p>WAF可以阻止针对WEB的各种攻击，譬如：SQL 注入、XSS攻击、溢出攻击、挂马攻击、盗链攻击、WEB恶意扫描攻击、CSRF攻击、XML Dos攻击、CC攻击等。</p>
+<p>WEB 防火墙产品部署在 WEB 服务器的前面，串行接入，不仅在硬件性能上要求高，而且不能影响 WEB 服务，所以往往不仅具有 HA 功能、Bypass 功能，而且还需要与负载均衡、WEB Cache 等 WEB 服务器前的常见的产品协调部署。</p>
+<h2 id="虚拟专用网络（VPN）技术"><a href="#虚拟专用网络（VPN）技术" class="headerlink" title="虚拟专用网络（VPN）技术"></a>虚拟专用网络（VPN）技术</h2><p>VPN的英文全称是“Virtual Private Network”，翻译过来就是“虚拟专用网络”。顾名思义，我们可以把它理解成是虚拟出来的企业内部专线。</p>
+<h3 id="VPN基本概念"><a href="#VPN基本概念" class="headerlink" title="VPN基本概念"></a>VPN基本概念</h3><p>虚拟专用网络的目的是提供一条安全的网络通道，通常是通过 Internet 的专用隧道。要达到这个目的，需要将传输内容封装在含有目的路由信息的数据包包头信中，这些信息有助于将所传输的内容送达目的地。传输内容通常会进行加密处理，这样能够保证数据的完整性、机密性和可认证性。它可以通过特殊的加密的通信协议在连接到     Internet 上的位于不同地方的两个或多个企业内部网之间建立一条专有的通信线路，就好比是架设了一条专线一样，但是它并不需要真正地去铺设光缆之类的物理线路。虚拟专用网可以帮助远程用户、公司分支机构、商业伙伴及供应商同公司的内部网建立可信的安全连接，并保证数据的安全传输。</p>
+<p>VPN 通过一个私有的通道来创建一个安全的私有连接，将远程用户、公司分支机构、公司的业务伙伴等跟企业网连接起来，形成一个扩展的公司企业网。</p>
+<h2 id="网络设备安全防护"><a href="#网络设备安全防护" class="headerlink" title="网络设备安全防护"></a>网络设备安全防护</h2><h3 id="VLAN划分"><a href="#VLAN划分" class="headerlink" title="VLAN划分"></a>VLAN划分</h3><p>虚拟局域网（Virtual Local Area Network ，VLAN）是一种建构于局域网交换技术（LAN Switch）的网络管理的技术，网管人员可以借此通过控制交换机有效分派出入局域网的数据包到正确的出入端口，达到对不同实体局域网中的设备进行逻辑分群 （Grouping） 管理，并降低局域网内大量数据流通时，因无用数据包过多而导致拥塞的问题，以及提升局域网的信息安全保障。 为实现交换机以太网的广播隔离 ，一种理想的解决方案就是采用虚拟局域网技术 。这种对连接到第二层交换机端口的网络用户的逻辑分段技术的实现非常灵活，它可以不受用户物理位置限制，根据用户需求进行VLAN划分；可在一个交换机上实现，也可跨交换机实现； 可以根据网络用户的位置、作用、部门或根据使用的应用程序、上层协议或者以太网连接端口的硬件地址来进行划分。</p>
+<p>使用 VLAN 的优点包括:</p>
+<p>1）控制广播风暴：一个VLAN就是一个逻辑广播域，通过对VLAN的创建，隔离了广播，缩小了广播范围，可以控制广播风暴的产生。</p>
+<p>2）提高网络整体安全性：通过路由访问列表和MAC地址分配等VLAN划分原则，可以控制用户访问权限和逻辑网段大小，将不同用户群划分在不同 VLAN，从而提高交换式网络的整体性能和安全性。</p>
+<p>3）网络管理简单、直观：对于交换式以太网，如果对某些用户重新进行网段分配，需要网络管理员对网络系统的物理结构重新进行调整 ，甚至需要追加网络设备，增大网络管理的工作量。在一个交换网络中，VLAN提供了网段和机构的弹性组合机制。</p>
+<p>从技术角度讲，依据不同原则，VLAN的划分有以下三种方法：</p>
+<p>1）基于端口的VLAN 划分。</p>
+<p>2）基于 MAC 地址的 VLAN 划分。</p>
+<p>3）基于路由的 VLAN 划分。</p>
+<h3 id="网络设备的访问控制"><a href="#网络设备的访问控制" class="headerlink" title="网络设备的访问控制"></a>网络设备的访问控制</h3><p>网络设备访问控制的主要目的是防止非法用户进入网络设备并对其配置进行非法修改，避免网络瘫痪。</p>
+<h4 id="对网络设备访问的控制"><a href="#对网络设备访问的控制" class="headerlink" title="对网络设备访问的控制"></a>对网络设备访问的控制</h4><p>1）通过设置并加密口令实现访问控制：网络设备提供的最基本的安全是在设备访问和配置过程中设置登录口令。如果对设备的访问和配置不加以审查，往往会引发安全问题。例如，有些设备出厂时往往没有设置登录口令或设置一些缺省口令字，而一些管理员就利用这些缺省的口令进行管理，攻击者很容易就找到了一个入口，从而引发安 全问题。</p>
+<p>2）对虚拟终端的访问控制：虚拟端口相对于实端口而言，一般根据需要在交换机（或路由器）上虚拟出一些端口，这些端口被称为虚拟终端或虚拟端口。每台Cisco设备一般有 5 个缺省虚拟终端，在虚拟终端线路上实施访问控制列表，可以控制谁可以远程登录 （Telnet） 到该设备。</p>
+<p>3）对 WEB 控制台的访问控制：WEB console 是配置网络设备的另一种常用方法，具有友好的操作界面，使配置网络设备变得更加容易，但同时也引出了一些安全问题。 为了使得网络设备的管理与维护更加的便利，许多网络设备厂商都在自己的产品中实现了 HTTP 服务器，以建立一个交叉平台的、易于管理的图形化解决方案。用户可以通过 WEB 图形化界面对网络设备进行管理。多数的网络设备，拥有一整套机制来进行认证和限制 HTTP 远程访问。网络管理员必须牢记，嵌入到网络基础设施设备的 HTTP 客户机和服务器之间的通讯应当是安全的。</p>
+<p>4）对设备的访问设置不同的权限：网络设备的 super 命令设置的口令用于低级别用户向高级别用户切换时进行验证，类似于 UNIX 系统和 Linux 系统中从普通用户转换到 root 账户时须输入 super 进行切换。网络设备的命令级别共分为 4 级，分别为访问级（0 级）、监控级（1 级）、系统级（2 级）和管理级（3 级），当低级别用户向高级别切 换时，输入命令 super [level] ，此时如果设置了网络设备的 super 的 password，则只有验证通过后切换才能实现。</p>
+<p>5）控制会话超时及设置警示登录标语消息：如果控制台在特权模式下没有人看管，那么任何用户都可以乘机修改网络设备的配置。而对空闲会话的超时设置可以获得额外的安全保障，默认空闲会话超时时间为10分钟，可以通过 exec-timeout 命令改变会话超时时间。</p>
+<h4 id="利用-SNMPv3-协议来代替-SNMPv2-协议"><a href="#利用-SNMPv3-协议来代替-SNMPv2-协议" class="headerlink" title="利用 SNMPv3 协议来代替 SNMPv2 协议"></a>利用 SNMPv3 协议来代替 SNMPv2 协议</h4><p>简单网络管理协议（Simple Network Management Protocol，SNMP）是一个搜集统计信息并远程监视网络基础设施设备的协议，非常简单。在 V2 版本中，其实根本没有提供任何的安全措施。那时，SNMP 协议都是通过明文传输的，包括密码在内，在网络内的传输都是明文的。所以，是非常不安全的。</p>
+<p>为此，建议应该采用V3版本，而不要采用V2版本。因为V3解决了V2版本中的一些漏洞。特别值得强调的是在 V3 版本中，采用了MD5算法来验证SNMP管理器和代理器之间传递信息。在网络设备中，有 SNMP 两个选项，分别为只读与读写两个模式。</p>
+<h4 id="SSH-与-Telnet-远程管理协议"><a href="#SSH-与-Telnet-远程管理协议" class="headerlink" title="SSH 与 Telnet 远程管理协议"></a>SSH 与 Telnet 远程管理协议</h4><p>在实际工作中，还是习惯通过一些远程管理协议来远程管理网络设备。如果用户需 要远程管理的话，则有 SSH 与 Telnet 两种协议可以选择。不过在选择的时候，需要注 意一个问题。Telnet 与 SSH 在安全上是相差很大的。</p>
+<p>Telnet 是一种远程管理协议，但是，它跟 SNMPv2 版本一样，基本上没有提供可以 使用的安全机制，无论是代码，还是用户名与口令，在网络上都是明文传输的。</p>
+<p>使用 SSH 来管理网络设备，是因为 SSH 比 Telnet 协议提供了更高的安全性。如其 口令与代码在网络中都是通过密文来传输的。</p>
+<p>在维护各厂商的网络设备时，其性能、安全性、灵活性是日常管理工作中的三个主 要目标。故对于安全性来说，可以借鉴以上的三个建议，为网络设备提供一个安全的管 理环境。</p>
+<h2 id="网络设备安全配置"><a href="#网络设备安全配置" class="headerlink" title="网络设备安全配置"></a>网络设备安全配置</h2><p>为保证能正确地操作路由和交换机，需要进行许多配置工作。这些配置工作包括安装补丁包及对设备进行安全配置来增强安全性。再花费大量时间和步骤来打补丁和加固网络设备。</p>
+<h3 id="安装补丁"><a href="#安装补丁" class="headerlink" title="安装补丁"></a>安装补丁</h3><p>各个网络设备厂商提供的补丁和更新程序要及时更新。</p>
+<h3 id="禁用多余服务"><a href="#禁用多余服务" class="headerlink" title="禁用多余服务"></a>禁用多余服务</h3><p>路由器、交换机也像其他通用操作系统（Windows、Linux、Unix 等）一样，也有除了转发数据包之外的服务，可以禁用或保护这些服务来增强网络安全性。</p>
+<p>1）ARP 代理：ARP 带来允许一台主机代表其他真实的主机来响应 ARP 请求，通常在防火墙上使用，用来为受保护的主机代理通信。多数厂商的路由都默认支持 ARP 代理功能，但这会使攻击者实行 ARP 欺骗攻击来对抗不在本地子网或 VLAN 中的主机。</p>
+<p>2）其他服务：所有的路由器都提供许多服务，但如果不需要的话，可以关闭。下面是一些服务样例列表，应该根据实际环境来选择替换。我们需要知道哪些能够在网络环境中使用，哪些是默认开启的，怎么样关闭或防止未授权的人员使用。</p>
+<p>（1）TFTP 服务。小型文件传输（Trivial File Transfer Protocol，TFTP）服务能够传输路由器系统配置文件或者上传软件更新至路由器。但是 TFTP 并不提供身份认证和授权功能，大多数管理员在需要的时候才会打开此服务。</p>
+<p>（2）BOOTP 服务。路由器可以通过 BOOTP（Bootstrap Protocol）服务的方式来向客户端提供 DHCP 服务。而在大型企业中通常会有专用的 DHCP 服务器来提供客户端的IP地址分配工作，所以需要关闭此服务。</p>
+<p>（3）网页服务。许多厂商的设备都默认提供了网页服务用于修改配置。如果不需要使用网页的方式管理路由器，应禁止该服务。</p>
+<p>（4）诊断服务。大多数的路由器都开启了多个基于 UDP 或TCP 的诊断服务，类似于 Echo、Debug等。这些调试功能会占用大量资源，并且攻击者也可以通过开启复杂的网络情况下的路由调试功能来占用大量资源，以达到创建 DoS的目的。如果不是用于故障调试或测试的话，应该关闭这些服务。</p>
+
+      
+	  
+	  
+	  
+		
+  <div class="article_TheEnd">-----本文结束<i class="fa fa-paw"></i>感谢您的阅读-----</div>
+
+	  
+
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="warcup wechat" style="width: 200px; max-width: 100%;">
+    <div>欢迎扫描二维码关注我的公众号~~~</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>喜 欢 这 篇 文 章 吗 ？</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.jpg" alt="warcup WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<ul class="post-copyright">
+  <li class="post-copyright-title">
+    <strong>本文标题：</strong>
+    网络和通信安全
+  </li>
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    warcup
+  </li>
+  <li class="post-copyright-created_at">
+    <strong>发布时间：</strong>
+    2019-10-08
+  </li>
+  <li class="post-copyright-updated_at">
+    <strong>最后更新：</strong>
+    2019-10-09
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://warcup.cn/blogs/2019/10/08/网络和通信安全/" title="网络和通信安全">https://warcup.cn/blogs/2019/10/08/网络和通信安全/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://warcup.cn/blogs/2019/10/08/网络和通信安全/" aria-label="复制成功！"></i></span>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({
+          title: "",
+          text: '复制文章链接成功',
+          icon: "success",
+          showConfirmButton: true
+          });
+	    });
+    });  
+</script>
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/等级保护/" rel="tag"><i class="fa fa-tag"><!--把#换成图形标签<i class="fa fa-tag"></i>--></i>
+ 等级保护</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/08/物理和环境安全/" rel="next" title="物理和环境安全">
+                <i class="fa fa-chevron-left"></i> 物理和环境安全
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/09/设备和计算安全/" rel="prev" title="设备和计算安全">
+                设备和计算安全 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/uploads/avatar_warcup.jpg" alt="warcup">
+          <p class="site-author-name" itemprop="name">warcup</p>
+           
+              <p class="site-description motion-element" itemprop="description">一些生活感悟和技术分享。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/public/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/warcup" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhangruochi.com/" target="_blank" title="RuoChiBlogs">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      RuoChiBlogs
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://skysec.top" target="_blank" title="SkyBlogs">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      SkyBlogs
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#防火墙技术"><span class="nav-number">1.</span> <span class="nav-text">防火墙技术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#防火墙概述"><span class="nav-number">1.1.</span> <span class="nav-text">防火墙概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防火墙的作用"><span class="nav-number">1.2.</span> <span class="nav-text">防火墙的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防火墙的功能"><span class="nav-number">1.3.</span> <span class="nav-text">防火墙的功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防火墙的分类"><span class="nav-number">1.4.</span> <span class="nav-text">防火墙的分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防火墙应用场景"><span class="nav-number">1.5.</span> <span class="nav-text">防火墙应用场景</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络威胁检测与防护技术"><span class="nav-number">2.</span> <span class="nav-text">网络威胁检测与防护技术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IDS概念"><span class="nav-number">2.1.</span> <span class="nav-text">IDS概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#入侵检测系统的功能和作用"><span class="nav-number">2.2.</span> <span class="nav-text">入侵检测系统的功能和作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#入侵检测系统的分类"><span class="nav-number">2.3.</span> <span class="nav-text">入侵检测系统的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#根据检测原理进行分类"><span class="nav-number">2.3.1.</span> <span class="nav-text">根据检测原理进行分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#异常检测"><span class="nav-number">2.3.1.1.</span> <span class="nav-text">异常检测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#误用检测"><span class="nav-number">2.3.1.2.</span> <span class="nav-text">误用检测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#混合检测"><span class="nav-number">2.3.1.3.</span> <span class="nav-text">混合检测</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根据数据来源进行分类"><span class="nav-number">2.3.2.</span> <span class="nav-text">根据数据来源进行分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基于主机的入侵检测系统"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">基于主机的入侵检测系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于网络的入侵检测系统"><span class="nav-number">2.3.2.2.</span> <span class="nav-text">基于网络的入侵检测系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#混合式的入侵检测"><span class="nav-number">2.3.2.3.</span> <span class="nav-text">混合式的入侵检测</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#入侵检测的过程"><span class="nav-number">2.4.</span> <span class="nav-text">入侵检测的过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#信息收集"><span class="nav-number">2.4.1.</span> <span class="nav-text">信息收集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#信息分析"><span class="nav-number">2.4.2.</span> <span class="nav-text">信息分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#告警与响应"><span class="nav-number">2.4.3.</span> <span class="nav-text">告警与响应</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#入侵检测系统的部署与应用"><span class="nav-number">2.5.</span> <span class="nav-text">入侵检测系统的部署与应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#入侵防御系统与-WEB-应用防火墙"><span class="nav-number">2.6.</span> <span class="nav-text">入侵防御系统与 WEB 应用防火墙</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#入侵防御系统"><span class="nav-number">2.6.1.</span> <span class="nav-text">入侵防御系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEB应用防火墙"><span class="nav-number">2.6.2.</span> <span class="nav-text">WEB应用防火墙</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟专用网络（VPN）技术"><span class="nav-number">2.7.</span> <span class="nav-text">虚拟专用网络（VPN）技术</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#VPN基本概念"><span class="nav-number">2.7.1.</span> <span class="nav-text">VPN基本概念</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络设备安全防护"><span class="nav-number">2.8.</span> <span class="nav-text">网络设备安全防护</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#VLAN划分"><span class="nav-number">2.8.1.</span> <span class="nav-text">VLAN划分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络设备的访问控制"><span class="nav-number">2.8.2.</span> <span class="nav-text">网络设备的访问控制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#对网络设备访问的控制"><span class="nav-number">2.8.2.1.</span> <span class="nav-text">对网络设备访问的控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#利用-SNMPv3-协议来代替-SNMPv2-协议"><span class="nav-number">2.8.2.2.</span> <span class="nav-text">利用 SNMPv3 协议来代替 SNMPv2 协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SSH-与-Telnet-远程管理协议"><span class="nav-number">2.8.2.3.</span> <span class="nav-text">SSH 与 Telnet 远程管理协议</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络设备安全配置"><span class="nav-number">2.9.</span> <span class="nav-text">网络设备安全配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装补丁"><span class="nav-number">2.9.1.</span> <span class="nav-text">安装补丁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#禁用多余服务"><span class="nav-number">2.9.2.</span> <span class="nav-text">禁用多余服务</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">warcup</span>
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+</body>
+</html>
